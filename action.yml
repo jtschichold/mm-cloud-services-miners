@@ -1,11 +1,19 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: mm-cloud-services-miners
+description: Mine sources of Cloud Services endpoints
+author: Luigi Mori
 inputs:
-  milliseconds: # change this
-    required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  config:
+    required: false
+    description: path to the action config.
+  configSection:
+    required: false
+    description: name of the config section to use.
+  script:
+    required: false
+    description: script to execute. If specified config* arguments are ignored.
+  scriptResult:
+    required: false
+    description: path to the file to store the result of the script into.
 runs:
   using: 'node12'
   main: 'dist/index.js'

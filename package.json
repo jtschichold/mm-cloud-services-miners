@@ -1,8 +1,8 @@
 {
-  "name": "typescript-action",
+  "name": "mm-cloud-services-miners",
   "version": "0.0.0",
   "private": true,
-  "description": "TypeScript template action",
+  "description": "Github Action to mine sources of Cloud Services endpoints",
   "main": "lib/main.js",
   "scripts": {
     "build": "tsc",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/typescript-action.git"
+    "url": "git+https://github.com/jtschichold/mm-cloud-services-miners.git"
   },
   "keywords": [
     "actions",
@@ -24,11 +24,11 @@
   ],
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "@actions/core": "^1.2.6"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@actions/core": "^1.2.6",
     "@types/jest": "^26.0.15",
+    "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.9",
     "@typescript-eslint/parser": "^4.8.1",
     "@vercel/ncc": "^0.25.1",
