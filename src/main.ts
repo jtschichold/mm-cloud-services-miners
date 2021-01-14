@@ -44,11 +44,11 @@ function parseInputs(): ActionInputs {
         result.scriptResult = scriptResult
     }
 
-    if (!result.config || !result.script) {
+    if (!result.config && !result.script) {
         throw new Error('one of config or script should be specified')
     }
 
-    if (result.script && !result.scriptResult) {
+    if (result.script) {
         if (!result.scriptResult)
             throw new Error('scriptResult is required when using script')
         if (result.config) {
@@ -62,7 +62,7 @@ function parseInputs(): ActionInputs {
     if (!result.configSection) {
         throw new Error('configSection is required when using config')
     }
-    if (!result.config.has(result.configSection)) {
+    if (!result.config!.has(result.configSection)) {
         throw new Error(
             `Section ${result.configSection} does not exist in config`
         )
