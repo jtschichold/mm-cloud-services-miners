@@ -35,7 +35,7 @@ function fromObject(o) {
     const result = new Map();
     if (o instanceof Array)
         throw new Error('Invalid config: should be a dictionary');
-    for (const stitle of o) {
+    for (const stitle in o) {
         const csection = o[stitle];
         if (!(csection instanceof Array)) {
             core.warning(`Invalid section ${stitle}, ignored`);
