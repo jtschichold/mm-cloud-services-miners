@@ -158,10 +158,10 @@ function parseInputs() {
     if (scriptResult) {
         result.scriptResult = scriptResult;
     }
-    if (!result.config || !result.script) {
+    if (!result.config && !result.script) {
         throw new Error('one of config or script should be specified');
     }
-    if (result.script && !result.scriptResult) {
+    if (result.script) {
         if (!result.scriptResult)
             throw new Error('scriptResult is required when using script');
         if (result.config) {
