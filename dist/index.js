@@ -200,6 +200,7 @@ function run() {
                     }
                     writeResult(miningConfig.resultPath, result);
                 }
+                return;
             }
             // script
             throw new Error(`Support for script not implemented yet`);

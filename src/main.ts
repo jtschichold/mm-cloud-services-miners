@@ -98,6 +98,8 @@ async function run(): Promise<void> {
 
                 writeResult(miningConfig.resultPath, result)
             }
+
+            return
         }
 
         // script
