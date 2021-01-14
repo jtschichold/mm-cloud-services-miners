@@ -26,7 +26,7 @@ jobs:
           config: ./__tests__/test-config.yml
           configSection: test1
       - name: process
-        uses: jtschichold/mm-process-url-list
+        uses: jtschichold/mm-process-url-list@2ae39d5
         with:
           list: './temp/*.lst'
           outFormat: PANOSURL
