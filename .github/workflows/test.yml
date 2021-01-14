@@ -4,7 +4,6 @@ on: # rebuild any PRs and main branch changes
   push:
     branches:
       - main
-      - 'releases/*'
 
 jobs:
   build: # make sure build/ci work properly
@@ -15,3 +14,20 @@ jobs:
           npm install
       - run: |
           npm run all
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: create temp dir
+        run: mkdir -p ./temp
+      - name: mine
+        uses: ./
+        with:
+          config: ./__tests__/test-config.yml
+          configSection: test1
+      - name: process
+        uses: jtschichold/mm-process-url-list
+        with:
+          list: './temp/*.lst'
+          outFormat: PANOSURL
+          result: './temp/cloud-services.lst'

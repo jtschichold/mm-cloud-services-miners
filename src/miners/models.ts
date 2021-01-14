@@ -1,8 +1,8 @@
-import {ConfigSection} from '../config'
+import {MiningConfig} from '../config'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export type Miner = (args: ConfigSection['args']) => Promise<string[]>
+export type Miner = (args: MiningConfig['args']) => Promise<string[]|object[]>
 
 export interface MinerRegistry {
-  [miner: string]: Miner
+    [miner: string]: Miner
 }

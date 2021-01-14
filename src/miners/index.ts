@@ -1,3 +1,7 @@
 import {MinerRegistry} from './models'
 
-export const registry: MinerRegistry = {}
+import * as adobe from './adobe'
+
+export const registry: MinerRegistry = {
+    ...adobe.registry
+}
