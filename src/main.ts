@@ -87,16 +87,21 @@ async function run(): Promise<void> {
             for (const miningConfig of csection) {
                 core.info(`Handling mining config ${miningConfig.name}...`)
 
-                const miner = miners.registry[miningConfig.miner]
-                if (!miner)
+                const minerDefinition = miners.registry[miningConfig.miner]
+                if (!minerDefinition)
                     throw new Error(`Unknown miner ${miningConfig.miner}`)
 
-                let result = await miner(miningConfig.args)
-                if (miningConfig.filter) {
-                    result = jmespath.search(result, miningConfig.filter)
-                }
+                let result = await minerDefinition.miner(miningConfig.args)
 
-                writeResult(miningConfig.resultPath, result)
+                for (const o of miningConfig.outputs) {
+                    writeResult(
+                        o.resultPath,
+                        jmespath.search(
+                            result,
+                            o.filter || minerDefinition.defaultFilter
+                        )
+                    )
+                }
             }
 
             return

@@ -1,5 +1,5 @@
 test1:
   - name: mine adobe
     miner: AdobeCreativeMiner
-    filter: '[].endpoint'
-    resultPath: ./temp/adobe.lst
+    outputs:
+      - resultPath: ./temp/adobe.lst

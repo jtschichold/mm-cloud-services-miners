@@ -4,5 +4,8 @@ import {MiningConfig} from '../config'
 export type Miner = (args: MiningConfig['args']) => Promise<string[]|object[]>
 
 export interface MinerRegistry {
-    [miner: string]: Miner
+    [miner: string]: {
+        miner: Miner
+        defaultFilter: string
+    }
 }
