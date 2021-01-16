@@ -380,7 +380,76 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.registry = void 0;
 const adobe = __importStar(__webpack_require__(4399));
-exports.registry = Object.assign({}, adobe.registry);
+const office365 = __importStar(__webpack_require__(3932));
+exports.registry = Object.assign(Object.assign({}, adobe.registry), office365.registry);
+
+
+/***/ }),
+
+/***/ 3932:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const BASE_URL = 'https://endpoints.office.com/endpoints';
+const o365Miner = (args) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = [];
+    const o365Instance = args.get('instance') || 'Worldwide';
+    if (typeof o365Instance !== 'string') {
+        throw new Error('instance argument of O365Miner should be a valid O365 Instance.');
+    }
+    const clientGuid = process.env.O365MINER_CLIENT_GUID;
+    if (!clientGuid) {
+        throw new Error('O365MINER_CLIENT_GUID environment variable not defined. Should be set to a valid GUID.');
+    }
+    const url = `${BASE_URL}/${o365Instance}?ClientRequestId=${clientGuid}`;
+    const response = yield node_fetch_1.default(url);
+    if (!response.ok)
+        throw new Error(`Error calling O365 WebService Endpoint: ${response.status}`);
+    const o365Endpoints = yield response.json();
+    for (const egroup of o365Endpoints) {
+        const { id, serviceArea, serviceAreaDisplayName, tcpPorts, udpPorts, expressRoute, category, required, ips, urls } = egroup;
+        const base = {
+            id,
+            serviceArea,
+            serviceAreaDisplayName,
+            tcpPorts,
+            udpPorts,
+            expressRoute,
+            category,
+            required,
+            instance: o365Instance
+        };
+        for (const epip of (ips || [])) {
+            result.push(Object.assign(Object.assign({}, base), { endpoint: epip, endpointType: "IP" }));
+        }
+        for (const epurl of (urls || [])) {
+            result.push(Object.assign(Object.assign({}, base), { endpoint: epurl, endpointType: "URL" }));
+        }
+    }
+    return result;
+});
+exports.registry = {
+    O365Miner: {
+        miner: o365Miner,
+        defaultFilter: "[?endpointType=='IP'].endpoint"
+    }
+};
 
 
 /***/ }),
