@@ -47,14 +47,14 @@ const azureWithServiceTagsMiner: Miner = async args => {
     if (!jsonResponse.ok)
         throw new Error(`Error accessing failover link for Azure ${azureCloud}: ${jsonResponse.status}`)
 
-    const azureEndpoints = await jsonResponse.json()
+    const {cloud, values} = await jsonResponse.json()
 
-    for (const azureService of azureEndpoints) {
+    for (const azureService of (values || [])) {
         const {name, id, properties} = azureService
         if (!properties) continue
         const {region, regionId, platform, systemService, networkFeatures, addressPrefixes} = properties 
         const base: BaseAzureWithServiceTagsEndpoint = {
-            cloud: azureCloud,
+            cloud,
             id,
             name,
             region,

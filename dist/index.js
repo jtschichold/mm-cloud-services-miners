@@ -353,6 +353,101 @@ exports.registry = {
 
 /***/ }),
 
+/***/ 8741:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const cheerio = __importStar(__webpack_require__(3094));
+const CloudURLs = {
+    PublicCloud: "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519",
+    ChinaCloud: "https://www.microsoft.com/en-us/download/confirmation.aspx?id=57062",
+    USGovernmentCloud: "https://www.microsoft.com/en-us/download/confirmation.aspx?id=57063",
+    GermanyCloud: "https://www.microsoft.com/download/confirmation.aspx?id=57064"
+};
+const azureWithServiceTagsMiner = (args) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = [];
+    const azureCloud = args.get('cloud') || 'PublicCloud';
+    if (typeof azureCloud !== 'string' || !Object.keys(CloudURLs).includes(azureCloud)) {
+        throw new Error('cloud argument of AzureWithServiceTagsMiner should be a valid Azure cloud.');
+    }
+    const url = CloudURLs[azureCloud];
+    const response = yield node_fetch_1.default(url);
+    if (!response.ok)
+        throw new Error(`Error retrieving main Azure endpoints webpage for ${azureCloud}: ${response.status}`);
+    const $ = cheerio.load(yield response.text());
+    const jsonURL = $('a.failoverLink').attr('href');
+    if (!jsonURL)
+        throw new Error(`Failover link not found in Azure endpoints webpage for ${azureCloud}.`);
+    const jsonResponse = yield node_fetch_1.default(jsonURL);
+    if (!jsonResponse.ok)
+        throw new Error(`Error accessing failover link for Azure ${azureCloud}: ${jsonResponse.status}`);
+    const { cloud, values } = yield jsonResponse.json();
+    for (const azureService of (values || [])) {
+        const { name, id, properties } = azureService;
+        if (!properties)
+            continue;
+        const { region, regionId, platform, systemService, networkFeatures, addressPrefixes } = properties;
+        const base = {
+            cloud,
+            id,
+            name,
+            region,
+            regionId,
+            platform,
+            systemService,
+            networkFeatures
+        };
+        for (const ep of (addressPrefixes || [])) {
+            result.push(Object.assign(Object.assign({}, base), { endpoint: ep }));
+        }
+    }
+    return result;
+});
+exports.registry = {
+    AzureWithServiceTagsMiner: {
+        miner: azureWithServiceTagsMiner,
+        defaultFilter: "[].endpoint"
+    }
+};
+
+
+/***/ }),
+
 /***/ 4709:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -381,7 +476,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.registry = void 0;
 const adobe = __importStar(__webpack_require__(4399));
 const office365 = __importStar(__webpack_require__(3932));
-exports.registry = Object.assign(Object.assign({}, adobe.registry), office365.registry);
+const azure = __importStar(__webpack_require__(8741));
+exports.registry = Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry);
 
 
 /***/ }),
