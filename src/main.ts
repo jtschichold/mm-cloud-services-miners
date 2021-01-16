@@ -72,7 +72,7 @@ function parseInputs(): ActionInputs {
 }
 
 function writeResult(path: string, result: string[] | object[]) {
-    fs.writeFileSync(path, JSON.stringify(result), {
+    fs.writeFileSync(path, JSON.stringify(result, null, 4), {
         encoding: 'utf-8'
     })
 }

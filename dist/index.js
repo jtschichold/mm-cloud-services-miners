@@ -228,7 +228,7 @@ function parseInputs() {
     return result;
 }
 function writeResult(path, result) {
-    fs.writeFileSync(path, JSON.stringify(result), {
+    fs.writeFileSync(path, JSON.stringify(result, null, 4), {
         encoding: 'utf-8'
     });
 }
