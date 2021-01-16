@@ -1,0 +1,23 @@
+name: 'update-docs'
+on:
+  workflow_dispatch:
+jobs:
+  generate-miners-samples:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: mine
+        uses: ./
+        with:
+          config: ./docs/generate-miners-samples-config.yml
+          configSection: all
+        env:
+          O365MINER_CLIENT_GUID: ${{ secrets.O365MINER_CLIENT_GUID }}
+      - name: Add & Commit & Push
+        run: |-
+          git config user.name "Automated Generate Miners Samples"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs
+          timestamp=$(date -u)
+          git commit -m "Updated samples: ${timestamp}" || exit 0
+          git push
