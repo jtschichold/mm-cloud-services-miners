@@ -24,7 +24,7 @@ jobs:
       - name: validate mined samples
         run: |-
           for d in ./docs/*.json; do
-            ./node_modules/.bin/ajv test -d "${d}" -s "./docs/schemas/${${d%%.json}##./docs/}.schema.json" --valid
+            ./node_modules/.bin/ajv test -d "${d}" -s "./docs/schemas/$(basename ${d%%.json}).schema.json" --valid
           done
       - name: Add & Commit & Push
         if: ${{ github.event.inputs.update_docs != '' }}
