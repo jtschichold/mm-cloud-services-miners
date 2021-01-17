@@ -8,9 +8,9 @@ all:
     miner: AzureWithServiceTagsMiner
     outputs:
       - resultPath: ./docs/AzureWithServiceTagsMiner.json
-        filter: '[]'
+        filter: "[?region=='southcentralus']"
   - name: mine o365
     miner: O365Miner
     outputs:
       - resultPath: ./docs/O365Miner.json
-        filter: '[]'
+        filter: "[?systemService=='AzureAD']"
