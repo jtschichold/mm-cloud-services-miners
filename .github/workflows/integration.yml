@@ -1,6 +1,11 @@
 name: 'update-docs'
 on:
+  schedule:
+    - cron: '14 3 * * *'
   workflow_dispatch:
+    inputs:
+      update_docs:
+        description: "Update documentation?"
 jobs:
   generate-miners-samples:
     runs-on: ubuntu-latest
@@ -14,6 +19,7 @@ jobs:
         env:
           O365MINER_CLIENT_GUID: ${{ secrets.O365MINER_CLIENT_GUID }}
       - name: Add & Commit & Push
+        if: ${{ github.event.inputs.update_docs != '' }}
         run: |-
           git config user.name "Automated Generate Miners Samples"
           git config user.email "actions@users.noreply.github.com"

@@ -1,0 +1,60 @@
+{
+    "$id": "https://githb.com/jtschichold/mm-cloud-services-miners/AzureWithServiceTagsMiner.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "description": "Check https://www.microsoft.com/en-us/download/details.aspx?id=56519 for full documentation of the fields",
+        "properties": {
+            "endpoint": {
+                "type": "string",
+                "description": "Azure Service endpoint"
+            },
+            "cloud": {
+                "type": "string",
+                "description": "Azure Cloud (Public, ...) of this endpoint"
+            },
+            "id": {
+                "type": "string",
+                "description": "Azure Service Id in the original Azure Service JSON feed"
+            },
+            "name": {
+                "type": "string",
+                "description": "Azure Service Name in the original Azure Service JSON feed"
+            },
+            "region": {
+                "type": "string",
+                "description": "Azure Cloud region"
+            },
+            "regionId": {
+                "type": "integer",
+                "description": "Azure Cloud region Id"
+            },
+            "platform": {
+                "type": "string",
+                "description": "Azure Service platform"
+            },
+            "systemService": {
+                "type": "string",
+                "description": "Azure Service Name"
+            },
+            "networkFeatures": {
+                "type": ["array", "null"],
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "endpoint",
+            "id",
+            "region",
+            "regionId",
+            "cloud",
+            "systemService",
+            "platform",
+            "name"
+        ]
+    }
+}

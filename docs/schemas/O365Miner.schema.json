@@ -1,0 +1,63 @@
+{
+    "$id": "https://githb.com/jtschichold/mm-cloud-services-miners/O365Miner.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "description": "Check https://docs.microsoft.com/en-us/microsoft-365/enterprise/microsoft-365-ip-web-service?view=o365-worldwide for full documentation of the fields",
+        "properties": {
+            "endpoint": {
+                "type": "string",
+                "description": "O365 endpoint"
+            },
+            "endpointType": {
+                "type": "string",
+                "enum": [
+                    "IP",
+                    "URL"
+                ],
+                "description": "Type of endpoint "
+            },
+            "id": {
+                "type": "integer",
+                "description": "Service ID in the original O365 endpoints JSON feed"
+            },
+            "serviceArea": {
+                "type": "string"
+            },
+            "serviceAreaDisplayName": {
+                "type": "string"
+            },
+            "tcpPorts": {
+                "type": ["string", "null"]
+            },
+            "udpPorts": {
+                "type": ["string", "null"]
+            },
+            "expressRoute": {
+                "type": "boolean"
+            },
+            "category": {
+                "type": "string"
+            },
+            "required": {
+                "type": "boolean"
+            },
+            "instance": {
+                "type": "string"
+            }
+        },
+        "required": [
+            "endpoint",
+            "endpointType",
+            "id",
+            "instance",
+            "required",
+            "serviceArea",
+            "serviceAreaDisplayName",
+            "category",
+            "expressRoute"
+        ]
+    }
+}
