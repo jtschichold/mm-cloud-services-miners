@@ -30,6 +30,8 @@ all:
         filter: "[?region=='eu-south-1']"
   - name: mine FB registered routes
     miner: RADBASRegisterdRoutesMiner
+    args:
+      autonomous_system: AS32934
     outputs:
       - resultPath: ./docs/RADBASRegisterdRoutesMiner.json
         filter: "[]"
