@@ -15,10 +15,9 @@ test('test O365Miner', async () => {
     fetchMock.get(
         `https://endpoints.office.com/endpoints/Worldwide?ClientRequestId=${clientGuid}`,
         new Response(
-            fs.readFileSync(
-                './__tests__/data/O365Miner-input.json',
-                {encoding: 'utf-8'}
-            ),
+            fs.readFileSync('./__tests__/data/O365Miner-input.json', {
+                encoding: 'utf-8'
+            }),
             {
                 status: 200
             }

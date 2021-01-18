@@ -1,0 +1,12 @@
+[
+    {
+        "endpoint": "130.211.32.0/20",
+        "scope": "global",
+        "service": "Google Cloud"
+    },
+    {
+        "endpoint": "2600:1901::/48",
+        "scope": "global",
+        "service": "Google Cloud"
+    }
+]

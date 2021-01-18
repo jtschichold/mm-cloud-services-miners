@@ -448,6 +448,72 @@ exports.registry = {
 
 /***/ }),
 
+/***/ 5098:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const cloudNetblocksMiner = (_args) => __awaiter(void 0, void 0, void 0, function* () {
+    // See https://cloud.google.com/compute/docs/faq#find_ip_range
+    const response = yield node_fetch_1.default('https://www.gstatic.com/ipranges/cloud.json');
+    if (!response.ok)
+        throw new Error(`Error retrieving Google Cloud Netblocks list: ${response.status}`);
+    const cloudEndpoints = yield response.json();
+    const result = [];
+    for (const cnetblock of ((cloudEndpoints === null || cloudEndpoints === void 0 ? void 0 : cloudEndpoints.prefixes) || [])) {
+        const { ipv4Prefix, ipv6Prefix, service, scope } = cnetblock;
+        const endpoint = ipv4Prefix || ipv6Prefix;
+        if (!endpoint)
+            continue;
+        result.push({
+            endpoint, scope, service
+        });
+    }
+    return result;
+});
+const netblocksMiner = (_args) => __awaiter(void 0, void 0, void 0, function* () {
+    // See https://cloud.google.com/compute/docs/faq#find_ip_range
+    const response = yield node_fetch_1.default('https://www.gstatic.com/ipranges/goog.json');
+    if (!response.ok)
+        throw new Error(`Error retrieving Google Netblocks list: ${response.status}`);
+    const netblocks = yield response.json();
+    const result = [];
+    for (const netblock of ((netblocks === null || netblocks === void 0 ? void 0 : netblocks.prefixes) || [])) {
+        const { ipv4Prefix, ipv6Prefix } = netblock;
+        const endpoint = ipv4Prefix || ipv6Prefix;
+        result.push(endpoint);
+    }
+    return result;
+});
+exports.registry = {
+    GoogleCloudNetblocksMiner: {
+        miner: cloudNetblocksMiner,
+        defaultFilter: "[].endpoint"
+    },
+    GoogleNetblocksMiner: {
+        miner: netblocksMiner,
+        defaultFilter: "[]"
+    }
+};
+
+
+/***/ }),
+
 /***/ 4709:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -477,7 +543,8 @@ exports.registry = void 0;
 const adobe = __importStar(__webpack_require__(4399));
 const office365 = __importStar(__webpack_require__(3932));
 const azure = __importStar(__webpack_require__(8741));
-exports.registry = Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry);
+const google = __importStar(__webpack_require__(5098));
+exports.registry = Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry);
 
 
 /***/ }),

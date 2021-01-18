@@ -14,3 +14,12 @@ all:
     outputs:
       - resultPath: ./docs/O365Miner.json
         filter: "[?serviceArea=='Common']"
+  - name: mine google cloud netblocks
+    miner: GoogleCloudNetblocksMiner
+    outputs:
+      - resultPath: ./docs/GoogleCloudNetblocksMiner.json
+        filter: "[?scopre=='europe-west6']"
+  - name: mine google netblocks
+    miner: GoogleNetblocksMiner
+    outputs:
+      - resultPath: ./docs/GoogleNetblocksMiner.json

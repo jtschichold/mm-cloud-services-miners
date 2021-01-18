@@ -1,0 +1,21 @@
+{
+    "$id": "https://githb.com/jtschichold/mm-cloud-services-miners/GoogleCloudNetblocksMiner.schema.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "minItems": 1,
+    "items": {
+        "type": "object",
+        "properties": {
+            "endpoint": {
+                "type": "string"
+            },
+            "service": {
+                "type": "string"
+            },
+            "scope": {
+                "type": "string"
+            }
+        },
+        "required": ["endpoint", "service", "scope"]
+    }
+}

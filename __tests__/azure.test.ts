@@ -29,9 +29,12 @@ test('test AzureWithServiceTagsMiner', async () => {
         )
     )
     const expected = JSON.parse(
-        fs.readFileSync('./__tests__/data/AzureWithServiceTagsMiner-result.json', {
-            encoding: 'utf-8'
-        })
+        fs.readFileSync(
+            './__tests__/data/AzureWithServiceTagsMiner-result.json',
+            {
+                encoding: 'utf-8'
+            }
+        )
     )
 
     const args = new Map()
