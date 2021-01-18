@@ -18,7 +18,7 @@ all:
     miner: GoogleCloudNetblocksMiner
     outputs:
       - resultPath: ./docs/GoogleCloudNetblocksMiner.json
-        filter: "[?scopre=='europe-west6']"
+        filter: "[?scope=='europe-west6']"
   - name: mine google netblocks
     miner: GoogleNetblocksMiner
     outputs:

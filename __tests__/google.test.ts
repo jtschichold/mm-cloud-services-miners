@@ -33,12 +33,7 @@ test('test GoogleCloudNetblocksMiner', async () => {
         args
     )
 
-    fs.writeFileSync(
-        './__tests__/data/GoogleCloudNetblocksMiner-result.json',
-        JSON.stringify(result, null, 4)
-    )
-
-    // expect(result).toEqual(expected)
+    expect(result).toEqual(expected)
 })
 
 test('test GoogleNetblocksMiner', async () => {
@@ -64,10 +59,5 @@ test('test GoogleNetblocksMiner', async () => {
     const args = new Map()
     const result = await google.registry['GoogleNetblocksMiner'].miner(args)
 
-    fs.writeFileSync(
-        './__tests__/data/GoogleNetblocksMiner-result.json',
-        JSON.stringify(result, null, 4)
-    )
-
-    // expect(result).toEqual(expected)
+    expect(result).toEqual(expected)
 })
