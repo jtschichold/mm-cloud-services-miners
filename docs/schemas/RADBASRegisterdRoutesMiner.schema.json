@@ -22,6 +22,6 @@
                 "type": "string"
             }
         },
-        "required": ["route", "origin", "source", "descr"]
+        "required": ["route", "origin", "source"]
     }
 }
