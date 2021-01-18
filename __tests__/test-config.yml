@@ -1,5 +1,7 @@
 test1:
   - name: mine adobe
     miner: AdobeCreativeMiner
+    args:
+      arg1: foobar
     outputs:
       - resultPath: ./temp/adobe.lst

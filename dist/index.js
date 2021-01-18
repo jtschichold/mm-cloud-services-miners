@@ -98,7 +98,7 @@ function miningConfigFromObject(o, title) {
     }
     const parsedArgs = new Map();
     if (args) {
-        for (const a of args) {
+        for (const a in args) {
             const value = args[a];
             if (typeof value !== 'string' &&
                 typeof value !== 'number' &&
