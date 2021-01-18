@@ -589,5 +589,19 @@
         "descr": "Universita' degli Studi di Bari",
         "origin": "AS137",
         "source": "RIPE"
+    },
+    {
+        "route": "2001:760::/32",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR-IPv6",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "2a00:1620::/32",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-IPv6-NET",
+        "origin": "AS137",
+        "source": "RIPE"
     }
 ]

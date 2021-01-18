@@ -715,7 +715,7 @@ exports.registry = void 0;
 const node_fetch_1 = __importDefault(__webpack_require__(467));
 const cheerio = __importStar(__webpack_require__(3094));
 const asRRMiner = (args) => __awaiter(void 0, void 0, void 0, function* () {
-    const whoisRegex = /^([a-z-]+):\s+(.*)$/gm;
+    const whoisRegex = /^([a-z0-9-]+):\s+(.*)$/gm;
     const result = [];
     const asID = args.get('autonomous_system');
     if (!asID)
