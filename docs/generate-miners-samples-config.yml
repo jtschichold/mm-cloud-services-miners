@@ -23,3 +23,9 @@ all:
     miner: GoogleNetblocksMiner
     outputs:
       - resultPath: ./docs/GoogleNetblocksMiner.json
+  - name: mine AWS ip ranges
+    miner: AWSIPRangesMiner
+    outputs:
+      - resultPath: ./docs/AWSIPRangesMiner.json
+        filter: "[?region=='eu-south-1']"
+  

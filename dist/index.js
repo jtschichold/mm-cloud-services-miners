@@ -353,6 +353,61 @@ exports.registry = {
 
 /***/ }),
 
+/***/ 2184:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const iprangesMiner = (_args) => __awaiter(void 0, void 0, void 0, function* () {
+    // See https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html
+    const response = yield node_fetch_1.default('https://ip-ranges.amazonaws.com/ip-ranges.json');
+    if (!response.ok)
+        throw new Error(`Error retrieving AWS IP Ranges list: ${response.status}`);
+    const cloudEndpoints = yield response.json();
+    const result = [];
+    for (const cprefix of ((cloudEndpoints === null || cloudEndpoints === void 0 ? void 0 : cloudEndpoints.prefixes) || [])) {
+        const { ip_prefix: endpoint, region, service, network_border_group } = cprefix;
+        if (!endpoint)
+            continue;
+        result.push({
+            endpoint, region, service, network_border_group
+        });
+    }
+    for (const cprefix of ((cloudEndpoints === null || cloudEndpoints === void 0 ? void 0 : cloudEndpoints.ipv6_prefixes) || [])) {
+        const { ipv6_prefix: endpoint, region, service, network_border_group } = cprefix;
+        if (!endpoint)
+            continue;
+        result.push({
+            endpoint, region, service, network_border_group
+        });
+    }
+    return result;
+});
+exports.registry = {
+    AWSIPRangesMiner: {
+        miner: iprangesMiner,
+        defaultFilter: "[].endpoint"
+    }
+};
+
+
+/***/ }),
+
 /***/ 8741:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -544,7 +599,8 @@ const adobe = __importStar(__webpack_require__(4399));
 const office365 = __importStar(__webpack_require__(3932));
 const azure = __importStar(__webpack_require__(8741));
 const google = __importStar(__webpack_require__(5098));
-exports.registry = Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry);
+const aws = __importStar(__webpack_require__(2184));
+exports.registry = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry), aws.registry);
 
 
 /***/ }),
