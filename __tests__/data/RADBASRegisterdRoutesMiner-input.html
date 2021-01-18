@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>RADb Query - RADb</title>
+    <meta name="description" content="Query the Merit RADb database, the world&#39;s largest public routing registry." />
+
+    
+    
+
+    
+
+
+<meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#2272bb"><meta name="application-name" content="RADb"><link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="RADb"><meta name="msapplication-TileColor" content="#2272bb"><meta name="msapplication-TileImage" content="mstile-144x144.png"><meta name="msapplication-config" content="browserconfig.xml"><link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png"><link rel="shortcut icon" href="/icons/favicon.ico">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-880012-3"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-880012-3');
+</script>
+
+
+    
+      <link href="/public.styles.css" rel="stylesheet">
+    
+  </head>
+  <body class="radb">
+    <header class="navbar navbar-expand-lg navbar-dark navbar-fixed bg-dark radb-navbar-primary">
+      
+
+      
+      <a class="navbar-brand" href="/">
+        <img class="logo-img--tagline" src="/images/logo-tagline.png" class="logo" alt="RADb The Internet Routing Registry" />
+        <img class="logo-img" src="/images/logo.png" class="logo" alt="RADb The Internet Routing Registry" />
+      </a>
+
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/support/">Support</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/query">Query</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+            </li>
+            </ul>
+            
+                <a href="/my"  class="btn btn-primary">Sign In</a>
+                <a href="/register" class="btn btn-primary">Register</a>
+            
+        </div>
+      
+    </header>
+
+    <main role="main" class="container-fluid">
+      
+      
+        <section class="section-page-title">
+          <h1>RADb Query</h1>
+          
+            <p>  <i class="fa fa-question-circle"></i>
+  <a href="/query/help">Query Help</a>
+</p>
+          
+        </section>
+
+        <section class="section-content">
+          
+
+
+
+
+
+<div class="content-query-form content-fullwidth">
+  <form action="/query" method="get" class="query-form">
+    <input type="hidden" name="advanced_query" value="1" />
+
+    <div class="input-group input-group-lg">
+      <input type="text" name="keywords" class="form-control" placeholder="Search IP, ASN, prefix..." value="as137" />
+      <div class="input-group-append query-advanced-toggle">
+        <a
+          aria-controls="advancedOptions"
+          aria-expanded="true"
+          class="btn"
+          data-toggle="collapse"
+          href="#advancedOptions"
+          role="button"
+        >
+          Advanced Options
+          <i class="fa fa-unsorted"></i>
+        </a>
+      </div>
+      <div class="input-group-append">
+        <button class="btn btn-aesthetic" type="submit">Query</button>
+      </div>
+    </div>
+
+    <div class="query-advanced collapse show" id="advancedOptions">
+      <div class="table-responsive">
+        <table class="table table-hover table-sm table-striped">
+          <thead>
+            <tr>
+              <th>Active</th>
+              <th>Flag</th>
+              <th>Information</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" name="-K" value="1" /></td>
+              <td><code>-K</code></td>
+              <td>Return primary keys only</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="-T" value="1" /></td>
+              <td><code>-T</code></td>
+              <td>
+                Limit to object type:
+                <select name="-T option">
+                  <option value="">-- object type --</option>
+                  <option  value="as-set">as-set</option>
+                  <option  value="aut-num">aut-num</option>
+                  <option  value="filter-set">filter-set</option>
+                  <option  value="inet-rtr">inet-rtr</option>
+                  <option  value="key-cert">key-cert</option>
+                  <option  value="mntner">mntner</option>
+                  <option  value="peering-set">peering-set</option>
+                  <option  value="route">route</option>
+                  <option  value="route-set">route-set</option>
+                  <option  value="rtr-set">rtr-set</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="ip_lookup" value="1" /></td>
+              <td>
+                <select name="ip_option">
+                  <option value="">-- IP address lookups --</option>
+                  <option  value="-l">-l (first level less specific)</option>
+                  <option  value="-L">-L (all levels less specific)</option>
+                  <option  value="-m">-m (first level more specific)</option>
+                  <option  value="-M">-M (all levels more specific)</option>
+                  <option  value="-x">-x (exact match only)</option>
+                </select>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="-i" value="1" checked/></td>
+              <td><code>-i</code></td>
+              <td>
+                Invert query by:
+                <select name="-i option">
+                  <option value="">-- object class --</option>
+                  <option  value="members">members</option>
+                  <option  value="mnt-by">mnt-by</option>
+                  <option selected value="origin">origin</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="-r" value="1" /></td>
+              <td><code>-r</code></td>
+              <td>Disable recursive lookups</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="-s" value="1" /></td>
+              <td><code>-s</code></td>
+              <td>
+                Query only these source(s):
+                <div class="query-sources">
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="RADB" id="db_RADB"
+                    
+                    />
+                    <label for="db_RADB">RADB</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="AFRINIC" id="db_AFRINIC"
+                    
+                    />
+                    <label for="db_AFRINIC">AFRINIC</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="ALTDB" id="db_ALTDB"
+                    
+                    />
+                    <label for="db_ALTDB">ALTDB</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="APNIC" id="db_APNIC"
+                    
+                    />
+                    <label for="db_APNIC">APNIC</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="ARIN" id="db_ARIN"
+                    
+                    />
+                    <label for="db_ARIN">ARIN</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="ARIN-NONAUTH" id="db_ARIN-NONAUTH"
+                    
+                    />
+                    <label for="db_ARIN-NONAUTH">ARIN-NONAUTH</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="BBOI" id="db_BBOI"
+                    
+                    />
+                    <label for="db_BBOI">BBOI</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="BELL" id="db_BELL"
+                    
+                    />
+                    <label for="db_BELL">BELL</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="CANARIE" id="db_CANARIE"
+                    
+                    />
+                    <label for="db_CANARIE">CANARIE</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="EASYNET" id="db_EASYNET"
+                    
+                    />
+                    <label for="db_EASYNET">EASYNET</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="HOST" id="db_HOST"
+                    
+                    />
+                    <label for="db_HOST">HOST</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="IDNIC" id="db_IDNIC"
+                    
+                    />
+                    <label for="db_IDNIC">IDNIC</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="JPIRR" id="db_JPIRR"
+                    
+                    />
+                    <label for="db_JPIRR">JPIRR</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="LACNIC" id="db_LACNIC"
+                    
+                    />
+                    <label for="db_LACNIC">LACNIC</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="LEVEL3" id="db_LEVEL3"
+                    
+                    />
+                    <label for="db_LEVEL3">LEVEL3</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="NESTEGG" id="db_NESTEGG"
+                    
+                    />
+                    <label for="db_NESTEGG">NESTEGG</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="NTTCOM" id="db_NTTCOM"
+                    
+                    />
+                    <label for="db_NTTCOM">NTTCOM</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="OPENFACE" id="db_OPENFACE"
+                    
+                    />
+                    <label for="db_OPENFACE">OPENFACE</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="PANIX" id="db_PANIX"
+                    
+                    />
+                    <label for="db_PANIX">PANIX</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="REACH" id="db_REACH"
+                    
+                    />
+                    <label for="db_REACH">REACH</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="RGNET" id="db_RGNET"
+                    
+                    />
+                    <label for="db_RGNET">RGNET</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="RIPE" id="db_RIPE"
+                    
+                    />
+                    <label for="db_RIPE">RIPE</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="RIPE-NONAUTH" id="db_RIPE-NONAUTH"
+                    
+                    />
+                    <label for="db_RIPE-NONAUTH">RIPE-NONAUTH</label>
+                  </div>
+                  
+                  <div class="form-check">
+                    <input
+                    class="form-check-input"
+                    type="checkbox"
+                    name="db"
+                    value="TC" id="db_TC"
+                    
+                    />
+                    <label for="db_TC">TC</label>
+                  </div>
+                  
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+  
+    <pre class="query-result query-result-external"><code>route:          192.84.152.0/22
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        INFN aggregated block
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:46Z
+last-modified:  2013-03-01T09:25:42Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          147.162.0.0/15
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        Universita&#39; di Padova
+remarks:        Universita&#39; di Palermo
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:36Z
+last-modified:  2013-03-01T09:11:01Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.106.246.0/23
+descr:          Aggregated GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:48Z
+last-modified:  2002-04-24T11:36:48Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.150.194.0/23
+descr:          Aggregated GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:59Z
+last-modified:  2013-03-01T11:05:59Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.34.0/24
+descr:          INFN
+origin:         AS137
+remarks:        GARR - Italian academic and research network
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:55Z
+last-modified:  2013-03-01T10:46:04Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.8.0/21
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        INFN aggregated block
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:53Z
+last-modified:  2013-03-01T10:30:34Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.16.0/20
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        INFN aggregated block
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:54Z
+last-modified:  2002-04-24T11:36:54Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.167.0.0/16
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T08:22:06Z
+last-modified:  2007-07-24T10:41:33Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          141.108.0.0/16
+descr:          INFNET
+origin:         AS137
+remarks:        INFN-ROMA 1
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:33Z
+last-modified:  2013-03-01T09:06:08Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          151.100.0.0/16
+descr:          SAPIENZA-NET
+origin:         AS137
+remarks:        Universita&#39; di Roma &quot;La Sapienza&quot;
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:38Z
+last-modified:  2013-03-01T09:15:42Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          130.251.0.0/16
+descr:          GENUANET
+origin:         AS137
+remarks:        Universita&#39; di Genova
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:30Z
+last-modified:  2013-03-01T09:03:51Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.148.193.0/24
+descr:          CISI-GE-NET
+origin:         AS137
+remarks:        Universita&#39; di Genova
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:58Z
+last-modified:  2013-03-01T11:04:14Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.84.144.0/21
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        INFN aggregated block
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:46Z
+last-modified:  2013-03-01T09:24:00Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.35.0/24
+descr:          INFNET59
+origin:         AS137
+remarks:        INFN
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:55Z
+last-modified:  2013-03-01T11:00:40Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.150.196.0/24
+descr:          CC-UNIVAQ
+origin:         AS137
+remarks:        Universita&#39; dell&#39;Aquila
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:59Z
+last-modified:  2013-03-01T11:12:05Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.141.0/24
+descr:          IZS-NET
+origin:         AS137
+remarks:        Istituto Zooprofilattico Sperimentale
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:05Z
+last-modified:  2013-03-01T11:20:50Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.84.128.0/20
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        INFN aggregated block
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:45Z
+last-modified:  2013-03-01T09:22:41Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.195.110.0/24
+descr:          IESI-NET
+origin:         AS137
+remarks:        Multiple Interconnected LANS of Research and Academic Institutes
+remarks:        located in Bari
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:25Z
+last-modified:  2013-03-01T11:14:07Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.106.234.0/24
+descr:          ASICGS-NET
+origin:         AS137
+remarks:        ASI
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:47Z
+last-modified:  2013-03-01T09:27:19Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.206.0.0/16
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T08:22:06Z
+last-modified:  2013-03-01T08:47:41Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          130.192.0.0/16
+descr:          TORINO-IT-LAN
+origin:         AS137
+remarks:        Politecnico di Torino
+remarks:        Università degli Studi di Torino
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:29Z
+last-modified:  2016-03-23T15:58:41Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          159.149.0.0/16
+descr:          UNIMINET
+origin:         AS137
+remarks:        Universita&#39; di Milano
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:41Z
+last-modified:  2013-03-01T09:17:53Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          141.250.0.0/16
+descr:          UNIPG-NET
+origin:         AS137
+remarks:        Universita&#39; di Perugia
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:33Z
+last-modified:  2013-03-01T09:08:01Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.56.0/21
+descr:          Aggregated GARR routes
+origin:         AS137
+remarks:        ENEA networks
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:50Z
+last-modified:  2013-03-01T10:28:19Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          131.175.0.0/16
+descr:          CILEA-NET
+origin:         AS137
+remarks:        CILEA + Universita&#39; Consorziate
+mnt-by:         GARR-LIR
+mnt-routes:     CINECA-MNT
+created:        2002-04-24T11:36:31Z
+last-modified:  2016-12-12T07:38:19Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          155.253.0.0/16
+descr:          CNR-MILANO
+origin:         AS137
+remarks:        LAN of research institutes and
+remarks:        centers of the Italian National
+remarks:        Research Council located in Milan
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:26Z
+last-modified:  2013-11-06T15:19:36Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          150.217.0.0/16
+descr:          FIORENET
+origin:         AS137
+remarks:        Universita&#39; di Firenze
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:36Z
+last-modified:  2002-04-24T11:36:36Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          160.80.0.0/16
+descr:          ROMA-UTOV-NET
+origin:         AS137
+remarks:        Universita&#39; di Roma &quot;Tor Vergata&quot;
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:43Z
+last-modified:  2002-04-24T11:36:43Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          160.78.0.0/16
+descr:          PARMANET
+origin:         AS137
+remarks:        Universita&#39; di Parma
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:42Z
+last-modified:  2013-03-01T09:18:48Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.37.0/24
+descr:          INFNET61
+origin:         AS137
+remarks:        INFN
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:56Z
+last-modified:  2013-03-01T11:02:47Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.84.127.0/24
+descr:          INFNET2
+origin:         AS137
+remarks:        INFN
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:45Z
+last-modified:  2002-04-24T11:36:45Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.41.218.0/24
+descr:          UDSAB
+origin:         AS137
+remarks:
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:44Z
+last-modified:  2002-04-24T11:36:44Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          155.185.0.0/16
+descr:          UNIMO
+origin:         AS137
+remarks:        Universita&#39; di Modena
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:38Z
+last-modified:  2002-04-24T11:36:38Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          140.164.0.0/16
+descr:          CNR-NAPOLI
+origin:         AS137
+remarks:        Network (Multiple-lan) of the CNR institutes in Naples
+remarks:        This net belongs to the nation-wide CNRnet.
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:26Z
+last-modified:  2013-11-06T12:38:50Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          157.138.0.0/16
+descr:          UNIVENET
+origin:         AS137
+remarks:        Universita&#39; di Venezia
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:40Z
+last-modified:  2002-04-24T11:36:40Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          160.97.0.0/16
+descr:          CALUNIV
+origin:         AS137
+remarks:        Universita&#39; della Calabria
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:43Z
+last-modified:  2002-04-24T11:36:43Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          140.105.0.0/16
+descr:          TRIESTE-NET
+origin:         AS137
+remarks:        Universita&#39; di Trieste ed altri
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:32Z
+last-modified:  2002-04-24T11:36:32Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.109.0/24
+descr:          BST-NET
+origin:         AS137
+remarks:        Biblioteca Statale del Popolo di Trieste
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:03Z
+last-modified:  2002-04-24T11:37:03Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          147.122.0.0/16
+descr:          SISSA-NET1
+origin:         AS137
+remarks:        SISSA - ISAS Trieste
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:35Z
+last-modified:  2002-04-24T11:36:35Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          151.97.0.0/16
+descr:          CT-NET
+origin:         AS137
+remarks:        Universita&#39; di Catania
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:37Z
+last-modified:  2002-04-24T11:36:37Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          158.110.0.0/16
+descr:          UDINE-NET
+origin:         AS137
+remarks:        Universita&#39; di Udine
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:41Z
+last-modified:  2002-04-24T11:36:41Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.160.156.0/24
+descr:          UNICA
+origin:         AS137
+remarks:        Universita&#39; di Cagliari
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:00Z
+last-modified:  2002-04-24T11:37:00Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.146.242.0/24
+descr:          UNICA
+origin:         AS137
+remarks:        Universita&#39; di Cagliari
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:58Z
+last-modified:  2002-04-24T11:36:58Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          130.186.0.0/19
+descr:          CINECA-NET
+origin:         AS137
+remarks:        CINECA
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:28Z
+last-modified:  2002-04-24T11:36:28Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          149.132.0.0/16
+descr:          UNIMIBNET
+origin:         AS137
+remarks:        Universita&#39; di  Milano - Bicocca
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:36Z
+last-modified:  2002-04-24T11:36:36Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.97.0/24
+descr:          IOR-NET
+descr:          Istituti Ortopedici Rizzoli
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:02Z
+last-modified:  2002-04-24T11:37:02Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          130.136.0.0/16
+descr:          BOLOGNA-MATH-CS
+origin:         AS137
+remarks:        Universita&#39; di Bologna
+remarks:        Dipartimento Scienze dell&#39;Informazione
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:28Z
+last-modified:  2002-04-24T11:36:28Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          137.204.0.0/16
+descr:          BOLOGNA-ALMA-NET
+origin:         AS137
+remarks:        Universita&#39; di Bologna
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:32Z
+last-modified:  2002-04-24T11:36:32Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          150.178.0.0/16
+descr:          CNR-PADOVA
+origin:         AS137
+remarks:        Multiple-LAN of CNR Institutes
+remarks:        located in Padova
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:27Z
+last-modified:  2013-11-06T15:22:49Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          150.145.0.0/16
+descr:          CNR-NET
+origin:         AS137
+remarks:        This was cnr-genova net. Now splitted across several CNR sites.
+remarks:        This net belongs to the nation-wide CNRnet.
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:27Z
+last-modified:  2013-11-06T12:45:34Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.117.0/24
+descr:          SAR-NET1
+descr:          Regional agrometeorological service of Sardinia
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:04Z
+last-modified:  2002-04-24T11:37:04Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.18.0/23
+descr:          SAR-NET
+origin:         AS137
+remarks:        Regional agrometeorological service of Sardinia
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:01Z
+last-modified:  2002-04-24T11:37:01Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          150.146.0.0/16
+descr:          CNR-ROMA
+origin:         AS137
+remarks:        Network of the CNR Istitutes in Rome
+remarks:        Multiple-lan
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:27Z
+last-modified:  2013-11-05T13:44:33Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          149.139.0.0/16
+descr:          CNR-FIRENZE
+origin:         AS137
+remarks:        Multiple interconnected LANS of Organisms of National Research
+remarks:        Council and other academic institutes located in Florence
+remarks:        This net belongs to the nation-wide CNRnet.
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:28Z
+last-modified:  2013-11-06T13:08:22Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.156.213.0/24
+descr:          Osservatorio Astronomico di Roma
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:00Z
+last-modified:  2002-04-24T11:37:00Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          157.27.0.0/16
+descr:          IVRUNIV-NET
+origin:         AS137
+remarks:        Universita&#39; di Verona
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:40Z
+last-modified:  2002-04-24T11:36:40Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.96.0/22
+descr:          ENEA-FRASCATI-1
+origin:         AS137
+remarks:        ENEA
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:51Z
+last-modified:  2002-04-24T11:36:51Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          143.225.0.0/16
+descr:          UNINA-NET
+origin:         AS137
+remarks:        Universita di Napoli Federico II
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:34Z
+last-modified:  2002-04-24T11:36:34Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          156.14.0.0/16
+descr:          CIRANET
+origin:         AS137
+remarks:        CIRA
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:39Z
+last-modified:  2002-04-24T11:36:39Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.55.101.0/24
+descr:          DIS-NET
+origin:         AS137
+remarks:
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:44Z
+last-modified:  2002-04-24T11:36:44Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.132.34.0/24
+descr:          CISED-IP
+origin:         AS137
+remarks:
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:52Z
+last-modified:  2002-04-24T11:36:52Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.133.28.0/24
+descr:          GARR-NAPOLI-IP
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:52Z
+last-modified:  2002-04-24T11:36:52Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.165.0/24
+descr:          CHEMNA
+origin:         AS137
+remarks:        Universita&#39; di Napoli
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:57Z
+last-modified:  2002-04-24T11:36:57Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.84.156.0/24
+descr:          INFNET31
+origin:         AS137
+remarks:        INFN
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:47Z
+last-modified:  2002-04-24T11:36:47Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.36.0/24
+descr:          INFNET60
+origin:         AS137
+remarks:
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:56Z
+last-modified:  2002-04-24T11:36:56Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.51.0/24
+descr:          ENEATCPNET-1
+origin:         AS137
+remarks:        ENEA - Nuclear Energy, Alternative Energy
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:48Z
+last-modified:  2002-04-24T11:36:48Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.100.0/24
+descr:          INFO - GER  Frascati
+origin:         AS137
+remarks:        ENEA
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:51Z
+last-modified:  2002-04-24T11:36:51Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.52.0/22
+descr:          Aggregated GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:49Z
+last-modified:  2002-04-24T11:36:49Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.135.32.0/23
+descr:          Aggregated GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:54Z
+last-modified:  2002-04-24T11:36:54Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.107.64.0/19
+descr:          GARR aggregated routes
+origin:         AS137
+remarks:        ENEA
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:50Z
+last-modified:  2002-04-24T11:36:50Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.101.0/24
+descr:          TIGEM-NET
+origin:         AS137
+remarks:        TIGEM - TELETHON Institute of Genetics and Medicine
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:03Z
+last-modified:  2002-04-24T11:37:03Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          131.114.0.0/16
+descr:          PISA-NET
+origin:         AS137
+remarks:        Universita&#39; di Pisa
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:30Z
+last-modified:  2002-04-24T11:36:30Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          194.119.192.0/19
+descr:          CNR-NET Italy
+origin:         AS137
+holes:          194.119.193.128/25, 194.119.194.64/26, 194.119.194.128/25
+remarks:        This net belongs to the nation-wide CNRnet.
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:29Z
+last-modified:  2013-11-06T12:42:17Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          146.48.0.0/16
+descr:          CNR-PISA
+descr:          Consiglio Nazionale delle Ricerche
+descr:          Area di Ricerca di Pisa
+remarks:        To notify abuse mailto: cert@garr.it
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-08-19T16:32:29Z
+last-modified:  2013-11-06T12:48:16Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.204.0.0/15
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-04-23T16:56:36Z
+last-modified:  2002-04-23T16:56:36Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          156.148.0.0/16
+descr:          CRS4NET
+origin:         AS137
+remarks:        CRS4
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:39Z
+last-modified:  2002-04-24T11:36:39Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.42.139.0/24
+descr:          UFFIZI-NET
+origin:         AS137
+remarks:        UFFIZI
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:37:01Z
+last-modified:  2002-04-24T11:37:01Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          131.154.0.0/16
+descr:          INFNET1 - INFN CNAF
+origin:         AS137
+remarks:        INFN - CNAF
+mnt-by:         GARR-LIR
+created:        2002-04-24T11:36:31Z
+last-modified:  2002-04-24T11:36:31Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          212.189.128.0/17
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2002-06-17T09:44:55Z
+last-modified:  2002-06-17T09:44:55Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          90.147.0.0/16
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2007-04-02T14:34:23Z
+last-modified:  2007-04-02T14:34:23Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          131.176.247.0/24
+descr:          ODAD-GARR-Matera
+origin:         AS137
+remarks:        ---------------------------------------------------------------
+remarks:        All communication must be directed to esanic@esa.int
+remarks:        Phone are only to be used as backup. +39 06 94188688
+remarks:        Office Hours are : 08:30 - 17:15 CET.
+remarks:        ---------------------------------------------------------------
+mnt-by:         ESANIC-MNT
+mnt-by:         GARR-LIR
+mnt-routes:     GARR-LIR
+created:        2010-01-22T13:38:34Z
+last-modified:  2010-09-21T14:40:18Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          138.41.0.0/16
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2011-01-26T10:21:07Z
+last-modified:  2011-01-26T10:21:07Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          185.191.180.0/22
+descr:          GARR routes
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2017-02-24T10:53:39Z
+last-modified:  2017-02-24T10:53:39Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          193.43.116.0/24
+descr:          CINECA-NET
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2019-11-07T10:09:58Z
+last-modified:  2019-11-07T10:09:58Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route:          192.167.59.0/24
+descr:          GARR routes
+descr:          Universita&#39; degli Studi di Bari
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2020-09-14T15:21:30Z
+last-modified:  2020-09-14T15:21:30Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route6:         2001:760::/32
+descr:          GARR-IPv6
+origin:         AS137
+mnt-by:         GARR-LIR
+created:        2005-03-11T11:34:18Z
+last-modified:  2005-03-11T11:34:18Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+    <pre class="query-result query-result-external"><code>route6:         2a00:1620::/32
+descr:          CNR-IPv6-NET
+origin:         AS137
+remarks:        Consiglio Nazionale delle Ricerche
+remarks:        To notify abuse mailto: cert@garr.it
+mnt-by:         GARR-LIR
+created:        2009-12-21T08:56:30Z
+last-modified:  2013-11-06T15:43:12Z
+source:         RIPE
+remarks:        ****************************
+remarks:        * THIS OBJECT IS MODIFIED
+remarks:        * Please note that all data that is generally regarded as personal
+remarks:        * data has been removed from this object.
+remarks:        * To view the original object, please query the RIPE Database at:
+remarks:        * http://www.ripe.net/whois
+remarks:        ****************************</code></pre>
+  
+
+
+
+
+        </section>
+      
+    </main>
+
+    
+          <footer class="footer">
+      <div class="container">
+        <div class="row no-gutters">
+          <div class="col-md-6 col-lg-3">
+            <a href="/" class="logo">
+              <img src="/images/logo-tagline.png" alt="RADb" />
+            </a>
+            <div class="social">
+              <a href="https://www.facebook.com/meritnetwork/"><i class="fa fa-facebook-square"></i></a>
+              <a href="https://twitter.com/MeritNetwork"><i class="fa fa-twitter-square"></i></a>
+              <a href="https://www.linkedin.com/company/merit-network/"><i class="fa fa-linkedin-square"></i></a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h4>Quick Links</h4>
+            <ul class="list-unstyled">
+              <li><a href="/register">Register Now</a></li>
+              <li><a href="/contact">Report a Bug</a></li>
+              <li><a href="https://api.radb.net/doc" rel="noopener noreferrer" target="_blank">API</a></li>
+              <li><a href="/faq">General FAQ/Help</a></li>
+              <li><a href="/terms-of-service">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h4><a href="https://www.merit.edu" target="_blank" rel="noopener noreferrer">Merit Network, Inc.</a></h4>
+            <address>880 Technology Drive, Suite B<br />Ann Arbor, MI 48108-8963</address>
+            <p><a href="tel:1-734-527-5776">734-527-5776</a></p>
+            <p><a href="mailto:radb@merit.edu">radb@merit.edu</a></p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h4>Subscribe</h4>
+            <form class="footer-form">
+              <div class="form-group">
+                <label for="subscribeEmailId">Subscribe to our email updates!</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                  </div>
+                  <input type="email" class="form-control" id="subscribeEmailId" placeholder="name@email.com" />
+                </div>
+              </div>
+              <button type="submit" class="btn btn-aesthetic btn-rounded btn-block">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <p class="copyright">&copy;  <a target="_blank" rel="noopener noreferrer" href="https://www.merit.edu/">Merit Network, Inc.</a></p>
+      </div>
+    </footer>
+
+    
+
+    <script type="text/javascript" src="/public.bundle.js"></script>
+
+    
+
+
+  </body>
+</html>

@@ -1,0 +1,593 @@
+[
+    {
+        "route": "192.84.152.0/22",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "147.162.0.0/15",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.106.246.0/23",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.150.194.0/23",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.34.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFN",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.8.0/21",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.16.0/20",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.167.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "141.108.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "151.100.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "SAPIENZA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "130.251.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "GENUANET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.148.193.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "CISI-GE-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.84.144.0/21",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.35.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET59",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.150.196.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "CC-UNIVAQ",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.141.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "IZS-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.84.128.0/20",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.195.110.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "IESI-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.106.234.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "ASICGS-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.206.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "130.192.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "TORINO-IT-LAN",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "159.149.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNIMINET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "141.250.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNIPG-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.56.0/21",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "131.175.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CILEA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "155.253.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-MILANO",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "150.217.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "FIORENET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "160.80.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "ROMA-UTOV-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "160.78.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "PARMANET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.37.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET61",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.84.127.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET2",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.41.218.0/24",
+        "descr": "UDSAB",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "155.185.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNIMO",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "140.164.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-NAPOLI",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "157.138.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNIVENET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "160.97.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CALUNIV",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "140.105.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "TRIESTE-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.109.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "BST-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "147.122.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "SISSA-NET1",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "151.97.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CT-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "158.110.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UDINE-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.160.156.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "UNICA",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.146.242.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "UNICA",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "130.186.0.0/19",
+        "mntBy": "GARR-LIR",
+        "descr": "CINECA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "149.132.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNIMIBNET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.97.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "Istituti Ortopedici Rizzoli",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "130.136.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "BOLOGNA-MATH-CS",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "137.204.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "BOLOGNA-ALMA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "150.178.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-PADOVA",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "150.145.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.117.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "Regional agrometeorological service of Sardinia",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.18.0/23",
+        "mntBy": "GARR-LIR",
+        "descr": "SAR-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "150.146.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-ROMA",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "149.139.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-FIRENZE",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.156.213.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "Osservatorio Astronomico di Roma",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "157.27.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "IVRUNIV-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.96.0/22",
+        "mntBy": "GARR-LIR",
+        "descr": "ENEA-FRASCATI-1",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "143.225.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "UNINA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "156.14.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CIRANET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.55.101.0/24",
+        "descr": "DIS-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.132.34.0/24",
+        "descr": "CISED-IP",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.133.28.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR-NAPOLI-IP",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.165.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "CHEMNA",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.84.156.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET31",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.36.0/24",
+        "descr": "INFNET60",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.51.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "ENEATCPNET-1",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.100.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "INFO - GER  Frascati",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.52.0/22",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.135.32.0/23",
+        "mntBy": "GARR-LIR",
+        "descr": "Aggregated GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.107.64.0/19",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR aggregated routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.101.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "TIGEM-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "131.114.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "PISA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "194.119.192.0/19",
+        "mntBy": "GARR-LIR",
+        "descr": "CNR-NET Italy",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "146.48.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "Area di Ricerca di Pisa",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.204.0.0/15",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "156.148.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "CRS4NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.42.139.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "UFFIZI-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "131.154.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "INFNET1 - INFN CNAF",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "212.189.128.0/17",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "90.147.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "131.176.247.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "ODAD-GARR-Matera",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "138.41.0.0/16",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "185.191.180.0/22",
+        "mntBy": "GARR-LIR",
+        "descr": "GARR routes",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "193.43.116.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "CINECA-NET",
+        "origin": "AS137",
+        "source": "RIPE"
+    },
+    {
+        "route": "192.167.59.0/24",
+        "mntBy": "GARR-LIR",
+        "descr": "Universita' degli Studi di Bari",
+        "origin": "AS137",
+        "source": "RIPE"
+    }
+]

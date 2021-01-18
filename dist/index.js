@@ -600,7 +600,8 @@ const office365 = __importStar(__webpack_require__(3932));
 const azure = __importStar(__webpack_require__(8741));
 const google = __importStar(__webpack_require__(5098));
 const aws = __importStar(__webpack_require__(2184));
-exports.registry = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry), aws.registry);
+const radb = __importStar(__webpack_require__(3018));
+exports.registry = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry), aws.registry), radb.registry);
 
 
 /***/ }),
@@ -667,6 +668,98 @@ exports.registry = {
     O365Miner: {
         miner: o365Miner,
         defaultFilter: "[?endpointType=='IP'].endpoint"
+    }
+};
+
+
+/***/ }),
+
+/***/ 3018:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const cheerio = __importStar(__webpack_require__(3094));
+const asRRMiner = (args) => __awaiter(void 0, void 0, void 0, function* () {
+    const whoisRegex = /^([a-z-]+):\s+(.*)$/gm;
+    const result = [];
+    const asID = args.get('autonomous_system');
+    if (!asID)
+        throw new Error(`autonomous_system argument is required.`);
+    const fetchResponse = yield node_fetch_1.default(`https://www.radb.net/query?advanced_query=1&keywords=${asID}&-T+option=&ip_option=&-i=1&-i+option=origin`);
+    if (!fetchResponse.ok)
+        throw new Error(`Error fetching AS Registered Routes page: ${fetchResponse.status}`);
+    const $ = cheerio.load(yield fetchResponse.text());
+    $('pre.query-result > code').map((_idx, e) => {
+        const rrecord = $(e).text().trim();
+        const newPrefix = {};
+        let rematch;
+        while ((rematch = whoisRegex.exec(rrecord)) !== null) {
+            const key = rematch[1];
+            const value = rematch[2];
+            if (key === "route" || key === "route6") {
+                newPrefix.route = value;
+                continue;
+            }
+            if (key === "mnt-by") {
+                newPrefix.mntBy = value;
+                continue;
+            }
+            if (["descr", "origin", "source"].includes(key)) {
+                newPrefix[key] = value;
+                continue;
+            }
+        }
+        if (newPrefix.route) {
+            result.push({
+                route: newPrefix.route,
+                mntBy: newPrefix.mntBy,
+                descr: newPrefix.descr,
+                origin: newPrefix.origin,
+                source: newPrefix.source
+            });
+        }
+    });
+    return result;
+});
+exports.registry = {
+    RADBASRegisterdRoutesMiner: {
+        miner: asRRMiner,
+        defaultFilter: '[].route'
     }
 };
 

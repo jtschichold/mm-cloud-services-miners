@@ -28,4 +28,8 @@ all:
     outputs:
       - resultPath: ./docs/AWSIPRangesMiner.json
         filter: "[?region=='eu-south-1']"
-  
+  - name: mine FB registered routes
+    miner: RADBASRegisterdRoutesMiner
+    outputs:
+      - resultPath: ./docs/RADBASRegisterdRoutesMiner.json
+        filter: "[]"
