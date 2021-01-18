@@ -12,7 +12,7 @@ interface RADBRegisteredRoutePrefix {
 }
 
 const asRRMiner: Miner = async args => {
-    const whoisRegex = /^([a-z-]+):\s+(.*)$/gm
+    const whoisRegex = /^([a-z0-9-]+):\s+(.*)$/gm
     const result: RADBRegisteredRoutePrefix[] = []
 
     const asID = args.get('autonomous_system')
