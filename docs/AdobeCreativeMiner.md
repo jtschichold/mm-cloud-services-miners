@@ -1,4 +1,4 @@
-# AdobeCreativeMiner
+# AdobeCreativeMiner
 
 Extract the list of Adobe Creative Cloud Network Endpoints from https://helpx.adobe.com/in/enterprise/kb/network-endpoints.html
 
@@ -10,7 +10,7 @@ Extract the list of Adobe Creative Cloud Network Endpoints from https://helpx.ad
 
 `[].endpoint`
 
-## Sample output
+## Sample output
 
 Using filter `[]`: [AdobeCreativeMiner.json](./AdobeCreativeMiner.json)
 
