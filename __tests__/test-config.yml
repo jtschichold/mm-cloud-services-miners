@@ -5,3 +5,16 @@ test1:
       arg1: foobar
     outputs:
       - resultPath: ./temp/adobe.lst
+test2:
+  - name: mine azuread
+    miner: AzureWithServiceTagsMiner
+    outputs:
+      - resultPath: ./AzureAD.json
+        filter: "[?systemService=='AzureAD']"
+  - name: mine AWS ip ranges
+    miner: AWSIPRangesMiner
+    outputs:
+      - resultPath: ./AWS-eu-south-1.json
+        filter: "[?region=='eu-south-1']"
+      - resultPath: ./AWS-us-west-2.json
+        filter: "[?region=='us-west-2']"
