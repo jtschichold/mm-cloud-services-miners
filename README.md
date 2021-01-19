@@ -80,7 +80,7 @@ A JMESPath filter to be applied to the results of the miner. If no filter is spe
 
 ## Available miners
 
-||||
+|Miner|||
 |-|-|-|
 | AdobeCreativeMiner | Extracts the list of Adobe Creative Cloud Network Endpoints | [docs/AdobeCreativeMiner.md](docs/AdobeCreativeMiner.md) |
 
