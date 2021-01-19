@@ -85,6 +85,10 @@ A JMESPath filter to be applied to the results of the miner. If no filter is spe
 | AdobeCreativeMiner | Extract the list of Adobe Creative Cloud Network Endpoints. | [Documentation](docs/AdobeCreativeMiner.md) |
 | AWSIPRangesMiner | Extract the list of ip ranges used by AWS Services. | [Documentation](docs/AWSIPRangesMiner.md) |
 | AzureWithServiceTagsMiner | Extract the list of IP Ranges used by Azure Services on a specific Azure Cloud. | [Documentation](docs/AzureWithServiceTagsMiner.md) |
+| GoogleCloudNetblocksMiner | Extract the list of Google Clod IP ranges. | [Documentation](docs/GoogleCloudNetblocksMiner.md) |
+| GoogleNetblocksMiner | Extract the list of Google Services IP ranges. | [Documentation](docs/GoogleNetblocksMiner.md) |
+| O365Miner | Extract the list of O365 endpoints. | [Documentation](docs/O365Miner.md) |
+| RADBASRegisterdRoutesMiner | Scrape routes registered by an AS from RADB web interface. | [Documentation](docs/RADBASRegisterdRoutesMiner.md) |
 
 ## License
 

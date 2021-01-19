@@ -18,7 +18,7 @@ One of:
 - `USGovernmentCloud`
 - `GermanyCloud`
 
-## Default filter
+## Default filter
 
 `[].endpoint`
 
