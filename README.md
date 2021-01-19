@@ -80,21 +80,9 @@ A JMESPath filter to be applied to the results of the miner. If no filter is spe
 
 ## Available miners
 
-### AdobeCreativeMiner
-
-Extract the list of URLs used by Adobe Creative Cloud Network Endpoints from https://helpx.adobe.com/in/enterprise/kb/network-endpoints.html
-
-#### Arguments
-
-*None*
-
-#### Default filter
-
-`[].endpoint`
-
-### Sample
-
-Ouput when filter is set to `[]`: [./docs/AdobeCreativeMiner.json](./docs/AdobeCreativeMiner.json)
+||||
+|-|-|-|
+| AdobeCreativeMiner | Extracts the list of Adobe Creative Cloud Network Endpoints | [docs/AdobeCreativeMiner.md](docs/AdobeCreativeMiner.md) |
 
 ## License
 
