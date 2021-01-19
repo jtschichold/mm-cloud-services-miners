@@ -82,7 +82,9 @@ A JMESPath filter to be applied to the results of the miner. If no filter is spe
 
 |Miner|||
 |-|-|-|
-| AdobeCreativeMiner | Extracts the list of Adobe Creative Cloud Network Endpoints | [docs/AdobeCreativeMiner.md](docs/AdobeCreativeMiner.md) |
+| AdobeCreativeMiner | Extract the list of Adobe Creative Cloud Network Endpoints. | [Documentation](docs/AdobeCreativeMiner.md) |
+| AWSIPRangesMiner | Extract the list of ip ranges used by AWS Services. | [Documentation](docs/AWSIPRangesMiner.md) |
+| AzureWithServiceTagsMiner | Extract the list of IP Ranges used by Azure Services on a specific Azure Cloud. | [Documentation](docs/AzureWithServiceTagsMiner.md) |
 
 ## License
 

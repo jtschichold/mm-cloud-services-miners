@@ -12,7 +12,7 @@ Extract the list of Adobe Creative Cloud Network Endpoints from https://helpx.ad
 
 ## Sample output
 
-Using filter `[]`: [AdobeCreativeMiner.json](./AdobeCreativeMiner.json)
+Using filter `[]`: [AdobeCreativeMiner.json](AdobeCreativeMiner.json)
 
 ## Output schema
 
