@@ -6,6 +6,7 @@ import * as azure from './azure'
 import * as google from './google'
 import * as aws from './aws'
 import * as radb from './radb'
+import * as bgpview from './bgpview'
 
 export const registry: MinerRegistry = {
     ...adobe.registry,
@@ -13,5 +14,6 @@ export const registry: MinerRegistry = {
     ...azure.registry,
     ...google.registry,
     ...aws.registry,
-    ...radb.registry
+    ...radb.registry,
+    ...bgpview.registry
 }

@@ -1,0 +1,1359 @@
+{
+    "status": "ok",
+    "status_message": "Query was successful",
+    "data": {
+        "ipv4_prefixes": [
+            {
+                "prefix": "90.147.0.0/16",
+                "ip": "90.147.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IT-GARR-20061205",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "90.147.0.0/16",
+                    "ip": "90.147.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "130.136.0.0/16",
+                "ip": "130.136.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "BOLOGNA-CS",
+                "description": "Dipartimento Scienze dell'Informazione",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "130.136.0.0/16",
+                    "ip": "130.136.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "130.186.0.0/19",
+                "ip": "130.186.0.0",
+                "cidr": 19,
+                "roa_status": "None",
+                "name": "CINECA-NET",
+                "description": "CINECA - Casalecchio di Reno (BO)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "130.186.0.0/19",
+                    "ip": "130.186.0.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "130.192.0.0/16",
+                "ip": "130.192.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IANA-BLK",
+                "description": "The whole IPv4 address space",
+                "country_code": "EU",
+                "parent": {
+                    "prefix": "130.192.0.0/18",
+                    "ip": "130.192.0.0",
+                    "cidr": 18,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "130.251.0.0/16",
+                "ip": "130.251.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "GENUANET",
+                "description": "UNI-Genova",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "130.251.0.0/16",
+                    "ip": "130.251.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "131.114.0.0/16",
+                "ip": "131.114.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "PISA-NET",
+                "description": "UNI-Pisa",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "131.114.0.0/16",
+                    "ip": "131.114.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "131.154.0.0/16",
+                "ip": "131.154.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "INFNET1",
+                "description": "INFN - CNAF - Bologna",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "131.154.0.0/16",
+                    "ip": "131.154.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "131.175.0.0/16",
+                "ip": "131.175.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CILEA-NET",
+                "description": "CINECA Consorzio Interuniversitario",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "131.175.0.0/16",
+                    "ip": "131.175.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "137.204.0.0/16",
+                "ip": "137.204.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "BOLOGNA-ALMA-NET",
+                "description": "UNI-Bologna",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "137.204.0.0/16",
+                    "ip": "137.204.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "138.41.0.0/16",
+                "ip": "138.41.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CS-NET",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "138.41.0.0/16",
+                    "ip": "138.41.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "140.105.0.0/16",
+                "ip": "140.105.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "TRIESTE-NET",
+                "description": "Universita' degli Studi di Trieste",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "140.105.0.0/16",
+                    "ip": "140.105.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "140.164.0.0/16",
+                "ip": "140.164.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-NAPOLI",
+                "description": "Area della ricerca di Napoli",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "140.164.0.0/16",
+                    "ip": "140.164.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "141.108.0.0/16",
+                "ip": "141.108.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "INFN - Roma1",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "141.108.0.0/16",
+                    "ip": "141.108.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "141.250.0.0/16",
+                "ip": "141.250.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UNIPG-NET",
+                "description": "Universita' degli Studi di Perugia",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "141.250.0.0/16",
+                    "ip": "141.250.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "143.225.0.0/16",
+                "ip": "143.225.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UNINA-NET",
+                "description": "Universita' degli Studi di Napoli Federico II",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "143.225.0.0/16",
+                    "ip": "143.225.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "146.48.0.0/16",
+                "ip": "146.48.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-PISA",
+                "description": "Area della Ricerca di Pisa",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "146.48.0.0/16",
+                    "ip": "146.48.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "147.122.0.0/16",
+                "ip": "147.122.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "SISSA-NET1",
+                "description": "Scuola Internazionale Superiore di Studi Avanzati",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "147.122.0.0/16",
+                    "ip": "147.122.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "147.162.0.0/15",
+                "ip": "147.162.0.0",
+                "cidr": 15,
+                "roa_status": "None",
+                "name": "IANA-BLK",
+                "description": "The whole IPv4 address space",
+                "country_code": "EU",
+                "parent": {
+                    "prefix": "147.162.0.0/16",
+                    "ip": "147.162.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "149.132.0.0/16",
+                "ip": "149.132.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UNIMIBNET",
+                "description": "Universita' degli Studi di Milano-Bicocca",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "149.132.0.0/16",
+                    "ip": "149.132.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "149.139.0.0/16",
+                "ip": "149.139.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-FIRENZE",
+                "description": "Area della Ricerca del CNR Firenze",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "149.139.0.0/16",
+                    "ip": "149.139.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "150.145.0.0/16",
+                "ip": "150.145.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-NET",
+                "description": "Internet Registry",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "150.145.0.0/16",
+                    "ip": "150.145.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "150.146.0.0/16",
+                "ip": "150.146.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-ROMA",
+                "description": "Sede Centrale ed Istituti di Roma",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "150.146.0.0/16",
+                    "ip": "150.146.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "150.178.0.0/16",
+                "ip": "150.178.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-PADOVA",
+                "description": "Area della Ricerca di Padova",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "150.178.0.0/16",
+                    "ip": "150.178.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "150.217.0.0/16",
+                "ip": "150.217.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "FIORENET",
+                "description": "Universita degli Studi di Firenze",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "150.217.0.0/16",
+                    "ip": "150.217.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "151.97.0.0/16",
+                "ip": "151.97.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CT-NET",
+                "description": "UNI-Catania",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "151.97.0.0/16",
+                    "ip": "151.97.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "151.100.0.0/16",
+                "ip": "151.100.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "SAPIENZA-NET",
+                "description": "UNI-Roma1",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "151.100.0.0/16",
+                    "ip": "151.100.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "155.185.0.0/16",
+                "ip": "155.185.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UNIMO",
+                "description": "Universita' degli Studi di Modena e Reggio Emilia",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "155.185.0.0/16",
+                    "ip": "155.185.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "155.253.0.0/16",
+                "ip": "155.253.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CNR-MILANO",
+                "description": "Area della Ricerca di Milano",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "155.253.0.0/16",
+                    "ip": "155.253.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "156.14.0.0/16",
+                "ip": "156.14.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CIRANET",
+                "description": "C.I.R.A. (Centro Italiano Ricerche Aerospaziali) S.C.p.A.",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "156.14.0.0/16",
+                    "ip": "156.14.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "156.148.0.0/16",
+                "ip": "156.148.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CRS4NET",
+                "description": "Centro Ricerca, Sviluppo e Studi Superiori in Sardegna Societa' a Responsabilita' Limitata",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "156.148.0.0/16",
+                    "ip": "156.148.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "157.27.0.0/16",
+                "ip": "157.27.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IVRUNIV-NET",
+                "description": "Universita' degli Studi di Verona",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "157.27.0.0/16",
+                    "ip": "157.27.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "157.138.0.0/16",
+                "ip": "157.138.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IANA-BLK",
+                "description": "The whole IPv4 address space",
+                "country_code": "EU",
+                "parent": {
+                    "prefix": "157.138.0.0/17",
+                    "ip": "157.138.0.0",
+                    "cidr": 17,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "158.110.0.0/16",
+                "ip": "158.110.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UDINE-NET",
+                "description": "Universita' degli Studi di Udine",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "158.110.0.0/16",
+                    "ip": "158.110.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "159.149.0.0/16",
+                "ip": "159.149.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "UNIMINET",
+                "description": "UNI-Milano",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "159.149.0.0/16",
+                    "ip": "159.149.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "160.78.0.0/16",
+                "ip": "160.78.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "PARMANET",
+                "description": "UNI-Parma",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "160.78.0.0/16",
+                    "ip": "160.78.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "160.80.0.0/16",
+                "ip": "160.80.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "ROMA-UTOV-NET",
+                "description": "UNI-Roma2",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "160.80.0.0/16",
+                    "ip": "160.80.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "160.97.0.0/16",
+                "ip": "160.97.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "CALUNIV",
+                "description": "Universita' della Calabria",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "160.97.0.0/16",
+                    "ip": "160.97.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "185.191.180.0/22",
+                "ip": "185.191.180.0",
+                "cidr": 22,
+                "roa_status": "None",
+                "name": "IT-GARR-20170224",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "185.191.180.0/22",
+                    "ip": "185.191.180.0",
+                    "cidr": 22,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.41.218.0/24",
+                "ip": "192.41.218.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UNISA-NET",
+                "description": "UNI-Salerno",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.41.218.0/24",
+                    "ip": "192.41.218.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.55.101.0/24",
+                "ip": "192.55.101.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "DIS-NET",
+                "description": "Dip. Informatica e Sistemistica",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.55.101.0/24",
+                    "ip": "192.55.101.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.84.127.0/24",
+                "ip": "192.84.127.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET2",
+                "description": "INFN - TIFPA Trento Institute for Fundamental",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.84.127.0/20",
+                    "ip": "192.84.127.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.84.128.0/20",
+                "ip": "192.84.128.0",
+                "cidr": 20,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.84.127.0/20",
+                    "ip": "192.84.127.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.84.144.0/21",
+                "ip": "192.84.144.0",
+                "cidr": 21,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.84.143.0/21",
+                    "ip": "192.84.143.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.84.152.0/22",
+                "ip": "192.84.152.0",
+                "cidr": 22,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.84.143.0/21",
+                    "ip": "192.84.143.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.84.156.0/24",
+                "ip": "192.84.156.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET31",
+                "description": "INFN (National Institute of Nuclear Physics)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.84.143.0/21",
+                    "ip": "192.84.143.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.106.234.0/24",
+                "ip": "192.106.234.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "ASICGS-NET",
+                "description": "ASI - Centro di Geodesia Spaziale",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.106.0.0/16",
+                    "ip": "192.106.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.51.0/24",
+                "ip": "192.107.51.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "ENEATCPNET-1",
+                "description": "ENEA - Frascati (RM)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.51.0/19",
+                    "ip": "192.107.51.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.52.0/22",
+                "ip": "192.107.52.0",
+                "cidr": 22,
+                "roa_status": "None",
+                "name": "ENEA-FRA-IPv4",
+                "description": "ENEA - Frascati (RM)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.51.0/19",
+                    "ip": "192.107.51.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.56.0/21",
+                "ip": "192.107.56.0",
+                "cidr": 21,
+                "roa_status": "None",
+                "name": "ENEANET",
+                "description": "ENEA",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.51.0/19",
+                    "ip": "192.107.51.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.64.0/19",
+                "ip": "192.107.64.0",
+                "cidr": 19,
+                "roa_status": "None",
+                "name": "ENEANET",
+                "description": "ENEA",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.51.0/19",
+                    "ip": "192.107.51.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.96.0/22",
+                "ip": "192.107.96.0",
+                "cidr": 22,
+                "roa_status": "None",
+                "name": "ENEANET",
+                "description": "ENEA",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.83.0/20",
+                    "ip": "192.107.83.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.107.100.0/24",
+                "ip": "192.107.100.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "ENEATCPNET-50",
+                "description": "ENEA - Frascati (RM)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.107.83.0/20",
+                    "ip": "192.107.83.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.132.34.0/24",
+                "ip": "192.132.34.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "CDS-IP",
+                "description": "UNI-Napoli Federico II",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.132.34.0/24",
+                    "ip": "192.132.34.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.133.28.0/24",
+                "ip": "192.133.28.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "GARR-NAPOLI-IP",
+                "description": "Centro di servizi Didattico Scientifico",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.133.28.0/24",
+                    "ip": "192.133.28.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.8.0/21",
+                "ip": "192.135.8.0",
+                "cidr": 21,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.8.0/20",
+                    "ip": "192.135.8.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.16.0/20",
+                "ip": "192.135.16.0",
+                "cidr": 20,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.8.0/20",
+                    "ip": "192.135.8.0",
+                    "cidr": 20,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.32.0/23",
+                "ip": "192.135.32.0",
+                "cidr": 23,
+                "roa_status": "None",
+                "name": "INFNET",
+                "description": "Istituto Nazionale di Fisica Nucleare (INFN)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.24.0/21",
+                    "ip": "192.135.24.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.34.0/24",
+                "ip": "192.135.34.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET58",
+                "description": "INFN - CNAF - Bologna",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.24.0/21",
+                    "ip": "192.135.24.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.35.0/24",
+                "ip": "192.135.35.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET59",
+                "description": "INFN - LNGS - Laboratori Nazionali del Gran Sasso",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.24.0/21",
+                    "ip": "192.135.24.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.36.0/24",
+                "ip": "192.135.36.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET60",
+                "description": "INFN (National Institute of Nuclear Physics)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.24.0/21",
+                    "ip": "192.135.24.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.37.0/24",
+                "ip": "192.135.37.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "INFNET61",
+                "description": "INFN (National Institute of Nuclear Physics)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.24.0/21",
+                    "ip": "192.135.24.0",
+                    "cidr": 21,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.135.165.0/24",
+                "ip": "192.135.165.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "CHEMNA",
+                "description": "Universita' degli Studi di Napoli Federico II",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.135.165.0/24",
+                    "ip": "192.135.165.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.146.242.0/24",
+                "ip": "192.146.242.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UNICA",
+                "description": "Universita' degli Studi di Cagliari",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.146.242.0/24",
+                    "ip": "192.146.242.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.148.193.0/24",
+                "ip": "192.148.193.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "CISI-GE-NET",
+                "description": "UNI-Genova",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.148.193.0/24",
+                    "ip": "192.148.193.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.150.194.0/23",
+                "ip": "192.150.194.0",
+                "cidr": 23,
+                "roa_status": "None",
+                "name": "UNIVAQ",
+                "description": "Facolta' di Scienze",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.150.194.0/23",
+                    "ip": "192.150.194.0",
+                    "cidr": 23,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.150.196.0/24",
+                "ip": "192.150.196.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UNIVAQ",
+                "description": "Facolta' di Scienze",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.150.196.0/24",
+                    "ip": "192.150.196.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.156.213.0/24",
+                "ip": "192.156.213.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "OARMP",
+                "description": "INAF - OA Roma - Monte Porzio Catone (RM)",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.156.213.0/24",
+                    "ip": "192.156.213.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.160.156.0/24",
+                "ip": "192.160.156.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UNICA",
+                "description": "Universita' degli Studi di Cagliari",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.160.156.0/24",
+                    "ip": "192.160.156.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.167.0.0/16",
+                "ip": "192.167.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IT-GARR-192-167",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.167.0.0/16",
+                    "ip": "192.167.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "192.167.59.0/24",
+                "ip": "192.167.59.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UNIBA2-NET",
+                "description": "Universita' degli Studi di Bari",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "192.167.0.0/16",
+                    "ip": "192.167.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.42.139.0/24",
+                "ip": "193.42.139.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "UFFIZI-NET",
+                "description": "Gallerie degli Uffizi - Firenze",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.42.139.0/24",
+                    "ip": "193.42.139.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.18.0/23",
+                "ip": "193.43.18.0",
+                "cidr": 23,
+                "roa_status": "None",
+                "name": "SAR",
+                "description": "ARPAS - Sassari",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.18.0/23",
+                    "ip": "193.43.18.0",
+                    "cidr": 23,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.97.0/24",
+                "ip": "193.43.97.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "IOR-NET",
+                "description": "IRCCS Settore Ortopedia e Traumatologia",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.97.0/24",
+                    "ip": "193.43.97.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.101.0/24",
+                "ip": "193.43.101.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "TIGEM-NET",
+                "description": "TIGEM Telethon Institute of Genetics and Medicine",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.101.0/24",
+                    "ip": "193.43.101.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.109.0/24",
+                "ip": "193.43.109.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "BST-NET",
+                "description": "Biblioteca Statale Stelio Crise di Trieste",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.109.0/24",
+                    "ip": "193.43.109.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.116.0/24",
+                "ip": "193.43.116.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "CINECA",
+                "description": "CINECA CONSORZIO INTERUNIVERSITARIO",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.116.0/24",
+                    "ip": "193.43.116.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.117.0/24",
+                "ip": "193.43.117.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "SAR",
+                "description": "ARPAS - Sassari",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.117.0/24",
+                    "ip": "193.43.117.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.43.141.0/24",
+                "ip": "193.43.141.0",
+                "cidr": 24,
+                "roa_status": "None",
+                "name": "IZS-NET",
+                "description": "IZS - Teramo",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.43.141.0/24",
+                    "ip": "193.43.141.0",
+                    "cidr": 24,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.204.0.0/15",
+                "ip": "193.204.0.0",
+                "cidr": 15,
+                "roa_status": "None",
+                "name": "IT-GARR-19930901",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.204.0.0/16",
+                    "ip": "193.204.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "193.206.0.0/16",
+                "ip": "193.206.0.0",
+                "cidr": 16,
+                "roa_status": "None",
+                "name": "IT-GARR-19930901",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "193.206.0.0/16",
+                    "ip": "193.206.0.0",
+                    "cidr": 16,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "194.119.192.0/19",
+                "ip": "194.119.192.0",
+                "cidr": 19,
+                "roa_status": "None",
+                "name": "IT-CNR-960322",
+                "description": "Consiglio Nazionale delle Ricerche",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "194.119.192.0/19",
+                    "ip": "194.119.192.0",
+                    "cidr": 19,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "212.189.128.0/17",
+                "ip": "212.189.128.0",
+                "cidr": 17,
+                "roa_status": "None",
+                "name": "IT-GARR-20020610",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "212.189.128.0/17",
+                    "ip": "212.189.128.0",
+                    "cidr": 17,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            }
+        ],
+        "ipv6_prefixes": [
+            {
+                "prefix": "2001:760::/32",
+                "ip": "2001:760::",
+                "cidr": 32,
+                "roa_status": "None",
+                "name": "IT-GARR-20011004",
+                "description": "Consortium GARR",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": null,
+                    "ip": null,
+                    "cidr": null,
+                    "rir_name": null,
+                    "allocation_status": "unknown"
+                }
+            },
+            {
+                "prefix": "2a00:1620::/32",
+                "ip": "2a00:1620::",
+                "cidr": 32,
+                "roa_status": "None",
+                "name": "IT-CNR-20091109",
+                "description": "Consiglio Nazionale delle Ricerche",
+                "country_code": "IT",
+                "parent": {
+                    "prefix": "2a00:1620::/32",
+                    "ip": "2a00:1620::",
+                    "cidr": 32,
+                    "rir_name": "RIPE",
+                    "allocation_status": "unknown"
+                }
+            }
+        ]
+    },
+    "@meta": {
+        "time_zone": "UTC",
+        "api_version": 1,
+        "execution_time": "87.59 ms"
+    }
+}

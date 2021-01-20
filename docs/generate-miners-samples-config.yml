@@ -35,3 +35,10 @@ all:
     outputs:
       - resultPath: ./docs/RADBASRegisterdRoutesMiner.json
         filter: "[]"
+  - name: mine FB announced prefixes
+    miner: BGPViewASNPrefixMiner
+    args:
+      autonomous_system: AS32934
+    outputs:
+      - resultPath: ./docs/BGPViewASNPrefixMiner.json
+        filter: "[]"

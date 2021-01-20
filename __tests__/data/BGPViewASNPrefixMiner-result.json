@@ -1,0 +1,590 @@
+[
+    {
+        "prefix": "90.147.0.0/16",
+        "roa_status": "None",
+        "name": "IT-GARR-20061205",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "130.136.0.0/16",
+        "roa_status": "None",
+        "name": "BOLOGNA-CS",
+        "country_code": "IT",
+        "description": "Dipartimento Scienze dell'Informazione"
+    },
+    {
+        "prefix": "130.186.0.0/19",
+        "roa_status": "None",
+        "name": "CINECA-NET",
+        "country_code": "IT",
+        "description": "CINECA - Casalecchio di Reno (BO)"
+    },
+    {
+        "prefix": "130.192.0.0/16",
+        "roa_status": "None",
+        "name": "IANA-BLK",
+        "country_code": "EU",
+        "description": "The whole IPv4 address space"
+    },
+    {
+        "prefix": "130.251.0.0/16",
+        "roa_status": "None",
+        "name": "GENUANET",
+        "country_code": "IT",
+        "description": "UNI-Genova"
+    },
+    {
+        "prefix": "131.114.0.0/16",
+        "roa_status": "None",
+        "name": "PISA-NET",
+        "country_code": "IT",
+        "description": "UNI-Pisa"
+    },
+    {
+        "prefix": "131.154.0.0/16",
+        "roa_status": "None",
+        "name": "INFNET1",
+        "country_code": "IT",
+        "description": "INFN - CNAF - Bologna"
+    },
+    {
+        "prefix": "131.175.0.0/16",
+        "roa_status": "None",
+        "name": "CILEA-NET",
+        "country_code": "IT",
+        "description": "CINECA Consorzio Interuniversitario"
+    },
+    {
+        "prefix": "137.204.0.0/16",
+        "roa_status": "None",
+        "name": "BOLOGNA-ALMA-NET",
+        "country_code": "IT",
+        "description": "UNI-Bologna"
+    },
+    {
+        "prefix": "138.41.0.0/16",
+        "roa_status": "None",
+        "name": "CS-NET",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "140.105.0.0/16",
+        "roa_status": "None",
+        "name": "TRIESTE-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Trieste"
+    },
+    {
+        "prefix": "140.164.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-NAPOLI",
+        "country_code": "IT",
+        "description": "Area della ricerca di Napoli"
+    },
+    {
+        "prefix": "141.108.0.0/16",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "INFN - Roma1"
+    },
+    {
+        "prefix": "141.250.0.0/16",
+        "roa_status": "None",
+        "name": "UNIPG-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Perugia"
+    },
+    {
+        "prefix": "143.225.0.0/16",
+        "roa_status": "None",
+        "name": "UNINA-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Napoli Federico II"
+    },
+    {
+        "prefix": "146.48.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-PISA",
+        "country_code": "IT",
+        "description": "Area della Ricerca di Pisa"
+    },
+    {
+        "prefix": "147.122.0.0/16",
+        "roa_status": "None",
+        "name": "SISSA-NET1",
+        "country_code": "IT",
+        "description": "Scuola Internazionale Superiore di Studi Avanzati"
+    },
+    {
+        "prefix": "147.162.0.0/15",
+        "roa_status": "None",
+        "name": "IANA-BLK",
+        "country_code": "EU",
+        "description": "The whole IPv4 address space"
+    },
+    {
+        "prefix": "149.132.0.0/16",
+        "roa_status": "None",
+        "name": "UNIMIBNET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Milano-Bicocca"
+    },
+    {
+        "prefix": "149.139.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-FIRENZE",
+        "country_code": "IT",
+        "description": "Area della Ricerca del CNR Firenze"
+    },
+    {
+        "prefix": "150.145.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-NET",
+        "country_code": "IT",
+        "description": "Internet Registry"
+    },
+    {
+        "prefix": "150.146.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-ROMA",
+        "country_code": "IT",
+        "description": "Sede Centrale ed Istituti di Roma"
+    },
+    {
+        "prefix": "150.178.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-PADOVA",
+        "country_code": "IT",
+        "description": "Area della Ricerca di Padova"
+    },
+    {
+        "prefix": "150.217.0.0/16",
+        "roa_status": "None",
+        "name": "FIORENET",
+        "country_code": "IT",
+        "description": "Universita degli Studi di Firenze"
+    },
+    {
+        "prefix": "151.97.0.0/16",
+        "roa_status": "None",
+        "name": "CT-NET",
+        "country_code": "IT",
+        "description": "UNI-Catania"
+    },
+    {
+        "prefix": "151.100.0.0/16",
+        "roa_status": "None",
+        "name": "SAPIENZA-NET",
+        "country_code": "IT",
+        "description": "UNI-Roma1"
+    },
+    {
+        "prefix": "155.185.0.0/16",
+        "roa_status": "None",
+        "name": "UNIMO",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Modena e Reggio Emilia"
+    },
+    {
+        "prefix": "155.253.0.0/16",
+        "roa_status": "None",
+        "name": "CNR-MILANO",
+        "country_code": "IT",
+        "description": "Area della Ricerca di Milano"
+    },
+    {
+        "prefix": "156.14.0.0/16",
+        "roa_status": "None",
+        "name": "CIRANET",
+        "country_code": "IT",
+        "description": "C.I.R.A. (Centro Italiano Ricerche Aerospaziali) S.C.p.A."
+    },
+    {
+        "prefix": "156.148.0.0/16",
+        "roa_status": "None",
+        "name": "CRS4NET",
+        "country_code": "IT",
+        "description": "Centro Ricerca, Sviluppo e Studi Superiori in Sardegna Societa' a Responsabilita' Limitata"
+    },
+    {
+        "prefix": "157.27.0.0/16",
+        "roa_status": "None",
+        "name": "IVRUNIV-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Verona"
+    },
+    {
+        "prefix": "157.138.0.0/16",
+        "roa_status": "None",
+        "name": "IANA-BLK",
+        "country_code": "EU",
+        "description": "The whole IPv4 address space"
+    },
+    {
+        "prefix": "158.110.0.0/16",
+        "roa_status": "None",
+        "name": "UDINE-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Udine"
+    },
+    {
+        "prefix": "159.149.0.0/16",
+        "roa_status": "None",
+        "name": "UNIMINET",
+        "country_code": "IT",
+        "description": "UNI-Milano"
+    },
+    {
+        "prefix": "160.78.0.0/16",
+        "roa_status": "None",
+        "name": "PARMANET",
+        "country_code": "IT",
+        "description": "UNI-Parma"
+    },
+    {
+        "prefix": "160.80.0.0/16",
+        "roa_status": "None",
+        "name": "ROMA-UTOV-NET",
+        "country_code": "IT",
+        "description": "UNI-Roma2"
+    },
+    {
+        "prefix": "160.97.0.0/16",
+        "roa_status": "None",
+        "name": "CALUNIV",
+        "country_code": "IT",
+        "description": "Universita' della Calabria"
+    },
+    {
+        "prefix": "185.191.180.0/22",
+        "roa_status": "None",
+        "name": "IT-GARR-20170224",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "192.41.218.0/24",
+        "roa_status": "None",
+        "name": "UNISA-NET",
+        "country_code": "IT",
+        "description": "UNI-Salerno"
+    },
+    {
+        "prefix": "192.55.101.0/24",
+        "roa_status": "None",
+        "name": "DIS-NET",
+        "country_code": "IT",
+        "description": "Dip. Informatica e Sistemistica"
+    },
+    {
+        "prefix": "192.84.127.0/24",
+        "roa_status": "None",
+        "name": "INFNET2",
+        "country_code": "IT",
+        "description": "INFN - TIFPA Trento Institute for Fundamental"
+    },
+    {
+        "prefix": "192.84.128.0/20",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.84.144.0/21",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.84.152.0/22",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.84.156.0/24",
+        "roa_status": "None",
+        "name": "INFNET31",
+        "country_code": "IT",
+        "description": "INFN (National Institute of Nuclear Physics)"
+    },
+    {
+        "prefix": "192.106.234.0/24",
+        "roa_status": "None",
+        "name": "ASICGS-NET",
+        "country_code": "IT",
+        "description": "ASI - Centro di Geodesia Spaziale"
+    },
+    {
+        "prefix": "192.107.51.0/24",
+        "roa_status": "None",
+        "name": "ENEATCPNET-1",
+        "country_code": "IT",
+        "description": "ENEA - Frascati (RM)"
+    },
+    {
+        "prefix": "192.107.52.0/22",
+        "roa_status": "None",
+        "name": "ENEA-FRA-IPv4",
+        "country_code": "IT",
+        "description": "ENEA - Frascati (RM)"
+    },
+    {
+        "prefix": "192.107.56.0/21",
+        "roa_status": "None",
+        "name": "ENEANET",
+        "country_code": "IT",
+        "description": "ENEA"
+    },
+    {
+        "prefix": "192.107.64.0/19",
+        "roa_status": "None",
+        "name": "ENEANET",
+        "country_code": "IT",
+        "description": "ENEA"
+    },
+    {
+        "prefix": "192.107.96.0/22",
+        "roa_status": "None",
+        "name": "ENEANET",
+        "country_code": "IT",
+        "description": "ENEA"
+    },
+    {
+        "prefix": "192.107.100.0/24",
+        "roa_status": "None",
+        "name": "ENEATCPNET-50",
+        "country_code": "IT",
+        "description": "ENEA - Frascati (RM)"
+    },
+    {
+        "prefix": "192.132.34.0/24",
+        "roa_status": "None",
+        "name": "CDS-IP",
+        "country_code": "IT",
+        "description": "UNI-Napoli Federico II"
+    },
+    {
+        "prefix": "192.133.28.0/24",
+        "roa_status": "None",
+        "name": "GARR-NAPOLI-IP",
+        "country_code": "IT",
+        "description": "Centro di servizi Didattico Scientifico"
+    },
+    {
+        "prefix": "192.135.8.0/21",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.135.16.0/20",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.135.32.0/23",
+        "roa_status": "None",
+        "name": "INFNET",
+        "country_code": "IT",
+        "description": "Istituto Nazionale di Fisica Nucleare (INFN)"
+    },
+    {
+        "prefix": "192.135.34.0/24",
+        "roa_status": "None",
+        "name": "INFNET58",
+        "country_code": "IT",
+        "description": "INFN - CNAF - Bologna"
+    },
+    {
+        "prefix": "192.135.35.0/24",
+        "roa_status": "None",
+        "name": "INFNET59",
+        "country_code": "IT",
+        "description": "INFN - LNGS - Laboratori Nazionali del Gran Sasso"
+    },
+    {
+        "prefix": "192.135.36.0/24",
+        "roa_status": "None",
+        "name": "INFNET60",
+        "country_code": "IT",
+        "description": "INFN (National Institute of Nuclear Physics)"
+    },
+    {
+        "prefix": "192.135.37.0/24",
+        "roa_status": "None",
+        "name": "INFNET61",
+        "country_code": "IT",
+        "description": "INFN (National Institute of Nuclear Physics)"
+    },
+    {
+        "prefix": "192.135.165.0/24",
+        "roa_status": "None",
+        "name": "CHEMNA",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Napoli Federico II"
+    },
+    {
+        "prefix": "192.146.242.0/24",
+        "roa_status": "None",
+        "name": "UNICA",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Cagliari"
+    },
+    {
+        "prefix": "192.148.193.0/24",
+        "roa_status": "None",
+        "name": "CISI-GE-NET",
+        "country_code": "IT",
+        "description": "UNI-Genova"
+    },
+    {
+        "prefix": "192.150.194.0/23",
+        "roa_status": "None",
+        "name": "UNIVAQ",
+        "country_code": "IT",
+        "description": "Facolta' di Scienze"
+    },
+    {
+        "prefix": "192.150.196.0/24",
+        "roa_status": "None",
+        "name": "UNIVAQ",
+        "country_code": "IT",
+        "description": "Facolta' di Scienze"
+    },
+    {
+        "prefix": "192.156.213.0/24",
+        "roa_status": "None",
+        "name": "OARMP",
+        "country_code": "IT",
+        "description": "INAF - OA Roma - Monte Porzio Catone (RM)"
+    },
+    {
+        "prefix": "192.160.156.0/24",
+        "roa_status": "None",
+        "name": "UNICA",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Cagliari"
+    },
+    {
+        "prefix": "192.167.0.0/16",
+        "roa_status": "None",
+        "name": "IT-GARR-192-167",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "192.167.59.0/24",
+        "roa_status": "None",
+        "name": "UNIBA2-NET",
+        "country_code": "IT",
+        "description": "Universita' degli Studi di Bari"
+    },
+    {
+        "prefix": "193.42.139.0/24",
+        "roa_status": "None",
+        "name": "UFFIZI-NET",
+        "country_code": "IT",
+        "description": "Gallerie degli Uffizi - Firenze"
+    },
+    {
+        "prefix": "193.43.18.0/23",
+        "roa_status": "None",
+        "name": "SAR",
+        "country_code": "IT",
+        "description": "ARPAS - Sassari"
+    },
+    {
+        "prefix": "193.43.97.0/24",
+        "roa_status": "None",
+        "name": "IOR-NET",
+        "country_code": "IT",
+        "description": "IRCCS Settore Ortopedia e Traumatologia"
+    },
+    {
+        "prefix": "193.43.101.0/24",
+        "roa_status": "None",
+        "name": "TIGEM-NET",
+        "country_code": "IT",
+        "description": "TIGEM Telethon Institute of Genetics and Medicine"
+    },
+    {
+        "prefix": "193.43.109.0/24",
+        "roa_status": "None",
+        "name": "BST-NET",
+        "country_code": "IT",
+        "description": "Biblioteca Statale Stelio Crise di Trieste"
+    },
+    {
+        "prefix": "193.43.116.0/24",
+        "roa_status": "None",
+        "name": "CINECA",
+        "country_code": "IT",
+        "description": "CINECA CONSORZIO INTERUNIVERSITARIO"
+    },
+    {
+        "prefix": "193.43.117.0/24",
+        "roa_status": "None",
+        "name": "SAR",
+        "country_code": "IT",
+        "description": "ARPAS - Sassari"
+    },
+    {
+        "prefix": "193.43.141.0/24",
+        "roa_status": "None",
+        "name": "IZS-NET",
+        "country_code": "IT",
+        "description": "IZS - Teramo"
+    },
+    {
+        "prefix": "193.204.0.0/15",
+        "roa_status": "None",
+        "name": "IT-GARR-19930901",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "193.206.0.0/16",
+        "roa_status": "None",
+        "name": "IT-GARR-19930901",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "194.119.192.0/19",
+        "roa_status": "None",
+        "name": "IT-CNR-960322",
+        "country_code": "IT",
+        "description": "Consiglio Nazionale delle Ricerche"
+    },
+    {
+        "prefix": "212.189.128.0/17",
+        "roa_status": "None",
+        "name": "IT-GARR-20020610",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "2001:760::/32",
+        "roa_status": "None",
+        "name": "IT-GARR-20011004",
+        "country_code": "IT",
+        "description": "Consortium GARR"
+    },
+    {
+        "prefix": "2a00:1620::/32",
+        "roa_status": "None",
+        "name": "IT-CNR-20091109",
+        "country_code": "IT",
+        "description": "Consiglio Nazionale delle Ricerche"
+    }
+]

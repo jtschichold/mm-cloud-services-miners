@@ -503,6 +503,74 @@ exports.registry = {
 
 /***/ }),
 
+/***/ 5782:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.registry = void 0;
+const node_fetch_1 = __importDefault(__webpack_require__(467));
+const asnPrefixMiner = (args) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = [];
+    let asID = args.get('autonomous_system');
+    if (!asID)
+        throw new Error(`autonomous_system argument is required.`);
+    if (typeof asID !== 'string' && typeof asID !== 'number')
+        throw new Error(`autonomous_system should be a string or an integer`);
+    if (typeof asID === 'string' && asID.toLowerCase().startsWith('as')) {
+        asID = asID.slice(2);
+    }
+    const fetchResponse = yield node_fetch_1.default(`https://api.bgpview.io/asn/${asID}/prefixes`);
+    if (!fetchResponse.ok)
+        throw new Error(`Error querying BGPView API: ${fetchResponse.status}`);
+    const apiResponse = yield fetchResponse.json();
+    const { status, status_message, data } = apiResponse;
+    if (status !== 'ok')
+        throw new Error(`BGPView API returned an error: ${status} - ${status_message}`);
+    if (!data)
+        throw new Error('No data from BGPView query');
+    const { ipv4_prefixes, ipv6_prefixes } = data;
+    for (const cprefix of (ipv4_prefixes || [])) {
+        const { prefix, roa_status, name, country_code, description } = cprefix;
+        if (!prefix)
+            continue;
+        result.push({
+            prefix, roa_status, name, country_code, description
+        });
+    }
+    for (const cprefix of (ipv6_prefixes || [])) {
+        const { prefix, roa_status, name, country_code, description } = cprefix;
+        if (!prefix)
+            continue;
+        result.push({
+            prefix, roa_status, name, country_code, description
+        });
+    }
+    return result;
+});
+exports.registry = {
+    BGPViewASNPrefixMiner: {
+        miner: asnPrefixMiner,
+        defaultFilter: '[].prefix'
+    }
+};
+
+
+/***/ }),
+
 /***/ 5098:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -601,7 +669,8 @@ const azure = __importStar(__webpack_require__(8741));
 const google = __importStar(__webpack_require__(5098));
 const aws = __importStar(__webpack_require__(2184));
 const radb = __importStar(__webpack_require__(3018));
-exports.registry = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry), aws.registry), radb.registry);
+const bgpview = __importStar(__webpack_require__(5782));
+exports.registry = Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, adobe.registry), office365.registry), azure.registry), google.registry), aws.registry), radb.registry), bgpview.registry);
 
 
 /***/ }),
