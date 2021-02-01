@@ -7,7 +7,7 @@
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "31.13.64.0/19",
+        "prefix": "31.13.64.0/18",
         "roa_status": "None",
         "name": "IE-FACEBOOK-20110418",
         "country_code": "IE",
@@ -15,13 +15,6 @@
     },
     {
         "prefix": "31.13.64.0/24",
-        "roa_status": "None",
-        "name": "IE-FACEBOOK-20110418",
-        "country_code": "IE",
-        "description": "Facebook Ireland Ltd"
-    },
-    {
-        "prefix": "31.13.64.0/18",
         "roa_status": "None",
         "name": "IE-FACEBOOK-20110418",
         "country_code": "IE",
@@ -43,6 +36,13 @@
     },
     {
         "prefix": "31.13.67.0/24",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-20110418",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "31.13.68.0/24",
         "roa_status": "None",
         "name": "IE-FACEBOOK-20110418",
         "country_code": "IE",
@@ -301,6 +301,13 @@
         "description": "MBA1.01"
     },
     {
+        "prefix": "102.132.99.0/24",
+        "roa_status": "None",
+        "name": "FB-LOS2-1",
+        "country_code": "NG",
+        "description": "FB-LOS2-1"
+    },
+    {
         "prefix": "103.4.96.0/22",
         "roa_status": "None",
         "name": "FACEBOOK-SG",
@@ -420,7 +427,21 @@
         "description": "Facebook, Inc."
     },
     {
-        "prefix": "157.240.0.0/24",
+        "prefix": "129.134.71.0/24",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
+        "prefix": "129.134.74.0/24",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
+        "prefix": "129.134.127.0/24",
         "roa_status": "None",
         "name": "THEFA-3",
         "country_code": "US",
@@ -428,6 +449,13 @@
     },
     {
         "prefix": "157.240.0.0/17",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
+        "prefix": "157.240.0.0/24",
         "roa_status": "None",
         "name": "THEFA-3",
         "country_code": "US",
@@ -512,6 +540,13 @@
     },
     {
         "prefix": "157.240.14.0/24",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
+        "prefix": "157.240.15.0/24",
         "roa_status": "None",
         "name": "THEFA-3",
         "country_code": "US",
@@ -721,6 +756,13 @@
         "description": "Facebook, Inc."
     },
     {
+        "prefix": "157.240.214.0/24",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
         "prefix": "157.240.215.0/24",
         "roa_status": "None",
         "name": "THEFA-3",
@@ -784,6 +826,13 @@
         "description": "Facebook, Inc."
     },
     {
+        "prefix": "157.240.224.0/24",
+        "roa_status": "None",
+        "name": "THEFA-3",
+        "country_code": "US",
+        "description": "Facebook, Inc."
+    },
+    {
         "prefix": "173.252.64.0/19",
         "roa_status": "None",
         "name": "FACEBOOK-INC",
@@ -833,14 +882,14 @@
         "description": "Edge Network Services Ltd"
     },
     {
-        "prefix": "185.60.216.0/22",
+        "prefix": "185.60.216.0/24",
         "roa_status": "None",
         "name": "IE-FACEBOOK-20140612",
         "country_code": "IE",
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "185.60.216.0/24",
+        "prefix": "185.60.216.0/22",
         "roa_status": "None",
         "name": "IE-FACEBOOK-20140612",
         "country_code": "IE",
@@ -868,14 +917,14 @@
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "185.89.218.0/23",
+        "prefix": "185.89.218.0/24",
         "roa_status": "None",
         "name": "IL-ONAVO-20150227",
         "country_code": "GB",
         "description": "Onavo Mobile LTD"
     },
     {
-        "prefix": "185.89.218.0/24",
+        "prefix": "185.89.218.0/23",
         "roa_status": "None",
         "name": "IL-ONAVO-20150227",
         "country_code": "GB",
@@ -910,14 +959,14 @@
         "description": "Facebook, Inc."
     },
     {
-        "prefix": "2a03:2880::/32",
+        "prefix": "2a03:2880::/36",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "2a03:2880::/36",
+        "prefix": "2a03:2880::/32",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -1064,6 +1113,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f017::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f019::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -1155,6 +1211,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f02f::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f030::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -1198,6 +1261,13 @@
     },
     {
         "prefix": "2a03:2880:f036::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f037::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -1261,6 +1331,13 @@
     },
     {
         "prefix": "2a03:2880:f043::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f044::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -1414,6 +1491,20 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f066::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f068::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f0fc::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -1561,6 +1652,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f117::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f119::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -1652,6 +1750,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f12f::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f130::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -1695,6 +1800,13 @@
     },
     {
         "prefix": "2a03:2880:f136::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f137::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -1758,6 +1870,13 @@
     },
     {
         "prefix": "2a03:2880:f143::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f144::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -1911,6 +2030,20 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f163::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f165::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f1fc::/47",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -2058,6 +2191,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f217::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f219::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -2149,6 +2289,13 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f22f::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f230::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -2192,6 +2339,13 @@
     },
     {
         "prefix": "2a03:2880:f236::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f237::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -2255,6 +2409,13 @@
     },
     {
         "prefix": "2a03:2880:f243::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f244::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -2408,6 +2569,20 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2880:f263::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2880:f265::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2880:f2ff::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
@@ -2450,14 +2625,14 @@
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "2a03:2881::/48",
+        "prefix": "2a03:2881::/32",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
         "description": "Facebook Ireland Ltd"
     },
     {
-        "prefix": "2a03:2881::/32",
+        "prefix": "2a03:2881::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -2499,7 +2674,35 @@
         "description": "Facebook Ireland Ltd"
     },
     {
+        "prefix": "2a03:2881:6::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
         "prefix": "2a03:2881:7::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2881:8::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2881:9::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2881:a::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",
@@ -2528,6 +2731,13 @@
     },
     {
         "prefix": "2a03:2881:4003::/48",
+        "roa_status": "None",
+        "name": "IE-FACEBOOK-201100822",
+        "country_code": "IE",
+        "description": "Facebook Ireland Ltd"
+    },
+    {
+        "prefix": "2a03:2881:4004::/48",
         "roa_status": "None",
         "name": "IE-FACEBOOK-201100822",
         "country_code": "IE",

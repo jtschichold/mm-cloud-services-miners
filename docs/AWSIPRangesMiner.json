@@ -258,6 +258,12 @@
         "network_border_group": "eu-south-1"
     },
     {
+        "endpoint": "15.221.51.0/24",
+        "region": "eu-south-1",
+        "service": "AMAZON",
+        "network_border_group": "eu-south-1"
+    },
+    {
         "endpoint": "150.222.242.99/32",
         "region": "eu-south-1",
         "service": "AMAZON",
@@ -900,6 +906,12 @@
         "network_border_group": "eu-south-1"
     },
     {
+        "endpoint": "2a05:d070:a000::/40",
+        "region": "eu-south-1",
+        "service": "AMAZON",
+        "network_border_group": "eu-south-1"
+    },
+    {
         "endpoint": "2a05:d079:a000::/40",
         "region": "eu-south-1",
         "service": "AMAZON",
@@ -967,6 +979,12 @@
     },
     {
         "endpoint": "2a05:d000:a000::/40",
+        "region": "eu-south-1",
+        "service": "EC2",
+        "network_border_group": "eu-south-1"
+    },
+    {
+        "endpoint": "2a05:d070:a000::/40",
         "region": "eu-south-1",
         "service": "EC2",
         "network_border_group": "eu-south-1"

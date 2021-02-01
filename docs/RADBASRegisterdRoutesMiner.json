@@ -1162,6 +1162,13 @@
         "source": "RADB"
     },
     {
+        "route": "157.240.228.0/24",
+        "mntBy": "MAINT-AS32934",
+        "descr": "Facebook, Inc.",
+        "origin": "AS32934",
+        "source": "RADB"
+    },
+    {
         "route": "185.89.219.0/24",
         "mntBy": "facebook-neteng",
         "origin": "AS32934",
@@ -3349,6 +3356,27 @@
     },
     {
         "route": "2a03:2881:a::/48",
+        "mntBy": "MAINT-AS32934",
+        "descr": "Facebook, Inc.",
+        "origin": "AS32934",
+        "source": "RADB"
+    },
+    {
+        "route": "2a03:2880:f268::/48",
+        "mntBy": "MAINT-AS32934",
+        "descr": "Facebook, Inc.",
+        "origin": "AS32934",
+        "source": "RADB"
+    },
+    {
+        "route": "2a03:2880:f06d::/48",
+        "mntBy": "MAINT-AS32934",
+        "descr": "Facebook, Inc.",
+        "origin": "AS32934",
+        "source": "RADB"
+    },
+    {
+        "route": "2a03:2880:f168::/48",
         "mntBy": "MAINT-AS32934",
         "descr": "Facebook, Inc.",
         "origin": "AS32934",
