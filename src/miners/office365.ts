@@ -1,10 +1,11 @@
 import fetch from 'node-fetch'
 
 import {Miner, MinerRegistry} from './models'
+import * as jmespath from '@metrichor/jmespath'
 
 const BASE_URL = 'https://endpoints.office.com/endpoints'
 
-interface O365Endpoint {
+interface O365Endpoint extends jmespath.JSONObject {
     id: number
     instance: string
     serviceArea: string

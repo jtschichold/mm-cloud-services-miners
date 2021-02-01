@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import * as core from '@actions/core'
-import * as jmespath from 'jmespath'
+import * as jmespath from '@metrichor/jmespath'
 
 interface MiningConfigOutput {
     resultPath: string

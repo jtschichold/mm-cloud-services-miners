@@ -1,9 +1,10 @@
 import fetch from 'node-fetch'
 import * as cheerio from 'cheerio'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
-interface AdobeCreativeEndpoint {
+interface AdobeCreativeEndpoint extends jmespath.JSONObject {
     serviceType: string
     serviceName: string
     endpoint: string

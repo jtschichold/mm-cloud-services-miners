@@ -1,8 +1,9 @@
 import fetch from 'node-fetch'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
-interface GoogleCloudNetblockEndpoint {
+interface GoogleCloudNetblockEndpoint extends jmespath.JSONObject {
     endpoint: string
     service: string
     scope: string

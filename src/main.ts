@@ -1,7 +1,7 @@
 import * as core from '@actions/core'
 import * as jsyaml from 'js-yaml'
 import * as fs from 'fs'
-import * as jmespath from 'jmespath'
+import * as jmespath from '@metrichor/jmespath'
 
 import * as config from './config'
 import * as miners from './miners'
@@ -71,7 +71,7 @@ function parseInputs(): ActionInputs {
     return result
 }
 
-function writeResult(path: string, result: string[] | object[]) {
+function writeResult(path: string, result: jmespath.JSONValue) {
     fs.writeFileSync(path, JSON.stringify(result, null, 4), {
         encoding: 'utf-8'
     })

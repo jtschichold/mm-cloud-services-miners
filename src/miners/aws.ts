@@ -1,8 +1,9 @@
 import fetch from 'node-fetch'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
-interface AWSEndpoint {
+interface AWSEndpoint extends jmespath.JSONObject {
     endpoint: string
     service: string
     region: string
