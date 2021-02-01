@@ -4716,66 +4716,6 @@
         "endpointType": "URL"
     },
     {
-        "id": 100,
-        "serviceArea": "Common",
-        "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
-        "tcpPorts": "443",
-        "expressRoute": false,
-        "category": "Default",
-        "required": false,
-        "instance": "Worldwide",
-        "endpoint": "api.dropboxapi.com",
-        "endpointType": "URL"
-    },
-    {
-        "id": 100,
-        "serviceArea": "Common",
-        "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
-        "tcpPorts": "443",
-        "expressRoute": false,
-        "category": "Default",
-        "required": false,
-        "instance": "Worldwide",
-        "endpoint": "www.dropbox.com",
-        "endpointType": "URL"
-    },
-    {
-        "id": 101,
-        "serviceArea": "Common",
-        "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
-        "tcpPorts": "443",
-        "expressRoute": false,
-        "category": "Default",
-        "required": false,
-        "instance": "Worldwide",
-        "endpoint": "app.box.com",
-        "endpointType": "URL"
-    },
-    {
-        "id": 102,
-        "serviceArea": "Common",
-        "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
-        "tcpPorts": "443",
-        "expressRoute": false,
-        "category": "Default",
-        "required": false,
-        "instance": "Worldwide",
-        "endpoint": "graph.facebook.com",
-        "endpointType": "URL"
-    },
-    {
-        "id": 102,
-        "serviceArea": "Common",
-        "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
-        "tcpPorts": "443",
-        "expressRoute": false,
-        "category": "Default",
-        "required": false,
-        "instance": "Worldwide",
-        "endpoint": "m.facebook.com",
-        "endpointType": "URL"
-    },
-    {
         "id": 103,
         "serviceArea": "Common",
         "serviceAreaDisplayName": "Microsoft 365 Common and Office Online",
