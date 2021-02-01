@@ -2,8 +2,7 @@ import * as path from 'path'
 import * as readline from 'readline'
 import * as fs from 'fs'
 import * as jmespath from '@metrichor/jmespath'
-import {load} from 'cheerio'
-import {assert} from 'console'
+import * as core from '@actions/core'
 
 interface IgnoreEntryRegex {
     type: 'regex'
@@ -30,44 +29,47 @@ async function loadIgnore(p: string): Promise<Ignore | null> {
 
     let result: Ignore = []
 
-    let fileStream: fs.ReadStream
     try {
+        fs.accessSync(ignoreFileName, fs.constants.R_OK)
+
+        let fileStream: fs.ReadStream
         fileStream = fs.createReadStream(ignoreFileName, 'utf-8')
+
+        const readLine = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        })
+
+        for await (const line of readLine) {
+            if (line.startsWith('#')) {
+                continue
+            }
+
+            const trimmedLine = line.trim()
+            if (trimmedLine.length === 0) {
+                continue
+            }
+
+            try {
+                let compiledJMESPath = jmespath.compile(trimmedLine)
+                result.push({
+                    type: 'jmespath',
+                    value: compiledJMESPath
+                })
+            } catch (_e) {
+                let compiledRegExp = new RegExp(trimmedLine)
+                result.push({
+                    type: 'regex',
+                    value: compiledRegExp
+                })
+            }
+        }
+
+        ignoreCache[ignoreFileName] = result
     } catch (error) {
+        core.error(error)
         return null
     }
-
-    const readLine = readline.createInterface({
-        input: fileStream,
-        crlfDelay: Infinity
-    })
-
-    for await (const line of readLine) {
-        if (line.startsWith('#')) {
-            continue
-        }
-
-        const trimmedLine = line.trim()
-        if (trimmedLine.length === 0) {
-            continue
-        }
-
-        try {
-            let compiledJMESPath = jmespath.compile(trimmedLine)
-            result.push({
-                type: 'jmespath',
-                value: compiledJMESPath
-            })
-        } catch (_e) {
-            let compiledRegExp = new RegExp(trimmedLine)
-            result.push({
-                type: 'regex',
-                value: compiledRegExp
-            })
-        }
-    }
-
-    ignoreCache[ignoreFileName] = result
 
     return result
 }
@@ -80,6 +82,7 @@ export async function applyIgnore(
     if (entries.length === 0) return []
 
     let ignore = await loadIgnore(p)
+    core.info(`Ignore ${ignore}`)
     if (!ignore) return entries
 
     if (typeof entries[0] === 'string') {
@@ -93,7 +96,9 @@ export async function applyIgnore(
                 return jmespath.TreeInterpreter.search(i.value, e) !== false
             })
 
-            return typeof ignored !== 'undefined'
+            if (ignored) core.warning(`Entry ${e} ignored...`)
+
+            return typeof ignored === 'undefined'
         })
     }
 
@@ -109,6 +114,8 @@ export async function applyIgnore(
             return jmespath.TreeInterpreter.search(i.value, e) !== false
         })
 
-        return typeof ignored !== 'undefined'
+        if (ignored) core.warning(`Entry ${JSON.stringify(e)} ignored...`)
+
+        return typeof ignored === 'undefined'
     })
 }

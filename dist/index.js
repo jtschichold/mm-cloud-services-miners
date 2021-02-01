@@ -192,6 +192,7 @@ const path = __importStar(__webpack_require__(5622));
 const readline = __importStar(__webpack_require__(1058));
 const fs = __importStar(__webpack_require__(5747));
 const jmespath = __importStar(__webpack_require__(4161));
+const core = __importStar(__webpack_require__(2186));
 const ignoreCache = {};
 function loadIgnore(p) {
     var e_1, _a;
@@ -201,51 +202,53 @@ function loadIgnore(p) {
             return ignoreCache[ignoreFileName];
         }
         let result = [];
-        let fileStream;
         try {
+            fs.accessSync(ignoreFileName, fs.constants.R_OK);
+            let fileStream;
             fileStream = fs.createReadStream(ignoreFileName, 'utf-8');
+            const readLine = readline.createInterface({
+                input: fileStream,
+                crlfDelay: Infinity
+            });
+            try {
+                for (var readLine_1 = __asyncValues(readLine), readLine_1_1; readLine_1_1 = yield readLine_1.next(), !readLine_1_1.done;) {
+                    const line = readLine_1_1.value;
+                    if (line.startsWith('#')) {
+                        continue;
+                    }
+                    const trimmedLine = line.trim();
+                    if (trimmedLine.length === 0) {
+                        continue;
+                    }
+                    try {
+                        let compiledJMESPath = jmespath.compile(trimmedLine);
+                        result.push({
+                            type: 'jmespath',
+                            value: compiledJMESPath
+                        });
+                    }
+                    catch (_e) {
+                        let compiledRegExp = new RegExp(trimmedLine);
+                        result.push({
+                            type: 'regex',
+                            value: compiledRegExp
+                        });
+                    }
+                }
+            }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (readLine_1_1 && !readLine_1_1.done && (_a = readLine_1.return)) yield _a.call(readLine_1);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            ignoreCache[ignoreFileName] = result;
         }
         catch (error) {
+            core.error(error);
             return null;
         }
-        const readLine = readline.createInterface({
-            input: fileStream,
-            crlfDelay: Infinity
-        });
-        try {
-            for (var readLine_1 = __asyncValues(readLine), readLine_1_1; readLine_1_1 = yield readLine_1.next(), !readLine_1_1.done;) {
-                const line = readLine_1_1.value;
-                if (line.startsWith('#')) {
-                    continue;
-                }
-                const trimmedLine = line.trim();
-                if (trimmedLine.length === 0) {
-                    continue;
-                }
-                try {
-                    let compiledJMESPath = jmespath.compile(trimmedLine);
-                    result.push({
-                        type: 'jmespath',
-                        value: compiledJMESPath
-                    });
-                }
-                catch (_e) {
-                    let compiledRegExp = new RegExp(trimmedLine);
-                    result.push({
-                        type: 'regex',
-                        value: compiledRegExp
-                    });
-                }
-            }
-        }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-        finally {
-            try {
-                if (readLine_1_1 && !readLine_1_1.done && (_a = readLine_1.return)) yield _a.call(readLine_1);
-            }
-            finally { if (e_1) throw e_1.error; }
-        }
-        ignoreCache[ignoreFileName] = result;
         return result;
     });
 }
@@ -254,6 +257,7 @@ function applyIgnore(p, epAttribute, entries) {
         if (entries.length === 0)
             return [];
         let ignore = yield loadIgnore(p);
+        core.info(`Ignore ${ignore}`);
         if (!ignore)
             return entries;
         if (typeof entries[0] === 'string') {
@@ -265,7 +269,9 @@ function applyIgnore(p, epAttribute, entries) {
                     // jmespath
                     return jmespath.TreeInterpreter.search(i.value, e) !== false;
                 });
-                return typeof ignored !== 'undefined';
+                if (ignored)
+                    core.warning(`Entry ${e} ignored...`);
+                return typeof ignored === 'undefined';
             });
         }
         return entries.filter(e => {
@@ -278,7 +284,9 @@ function applyIgnore(p, epAttribute, entries) {
                 // jmespath
                 return jmespath.TreeInterpreter.search(i.value, e) !== false;
             });
-            return typeof ignored !== 'undefined';
+            if (ignored)
+                core.warning(`Entry ${JSON.stringify(e)} ignored...`);
+            return typeof ignored === 'undefined';
         });
     });
 }
@@ -388,7 +396,7 @@ function run() {
                     let result = yield minerDefinition.miner(miningConfig.args);
                     for (const o of miningConfig.outputs) {
                         let survivingResults = yield ignore.applyIgnore(o.resultPath, minerDefinition.endpointAttribute, result);
-                        writeResult(o.resultPath, jmespath.search(result, o.filter || minerDefinition.defaultFilter));
+                        writeResult(o.resultPath, jmespath.search(survivingResults, o.filter || minerDefinition.defaultFilter));
                     }
                 }
                 return;

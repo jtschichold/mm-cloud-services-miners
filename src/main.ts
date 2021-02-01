@@ -104,7 +104,7 @@ async function run(): Promise<void> {
                     writeResult(
                         o.resultPath,
                         jmespath.search(
-                            result,
+                            survivingResults,
                             o.filter || minerDefinition.defaultFilter
                         )
                     )
