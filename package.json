@@ -27,6 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "@actions/core": "^1.2.6",
+    "@metrichor/jmespath": "^0.1.10",
     "@types/cheerio": "^0.22.23",
     "@types/jest": "^26.0.15",
     "@types/jmespath": "^0.15.0",
@@ -44,7 +45,6 @@
     "fetch-mock-jest": "^1.5.1",
     "jest": "^24.9.0",
     "jest-circus": "^26.4.2",
-    "jmespath": "^0.15.0",
     "js-yaml": "^3.14.0",
     "node-fetch": "^2.6.1",
     "prettier": "2.1.1",

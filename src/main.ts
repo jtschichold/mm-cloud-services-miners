@@ -1,10 +1,11 @@
 import * as core from '@actions/core'
 import * as jsyaml from 'js-yaml'
 import * as fs from 'fs'
-import * as jmespath from 'jmespath'
+import * as jmespath from '@metrichor/jmespath'
 
 import * as config from './config'
 import * as miners from './miners'
+import * as ignore from './ignore'
 
 interface ActionInputs {
     script?: string
@@ -71,7 +72,7 @@ function parseInputs(): ActionInputs {
     return result
 }
 
-function writeResult(path: string, result: string[] | object[]) {
+function writeResult(path: string, result: jmespath.JSONValue) {
     fs.writeFileSync(path, JSON.stringify(result, null, 4), {
         encoding: 'utf-8'
     })
@@ -94,10 +95,16 @@ async function run(): Promise<void> {
                 let result = await minerDefinition.miner(miningConfig.args)
 
                 for (const o of miningConfig.outputs) {
+                    let survivingResults = await ignore.applyIgnore(
+                        o.resultPath,
+                        minerDefinition.endpointAttribute,
+                        result
+                    )
+
                     writeResult(
                         o.resultPath,
                         jmespath.search(
-                            result,
+                            survivingResults,
                             o.filter || minerDefinition.defaultFilter
                         )
                     )

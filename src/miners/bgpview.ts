@@ -1,8 +1,9 @@
 import fetch from 'node-fetch'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
-interface BGPViewASNPrefix {
+interface BGPViewASNPrefix extends jmespath.JSONObject {
     prefix: string
     roa_status: string
     name: string
@@ -65,6 +66,7 @@ const asnPrefixMiner: Miner = async args => {
 export const registry: MinerRegistry = {
     BGPViewASNPrefixMiner: {
         miner: asnPrefixMiner,
+        endpointAttribute: 'prefix',
         defaultFilter: '[].prefix'
     }
 }

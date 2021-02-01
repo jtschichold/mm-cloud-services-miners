@@ -1,8 +1,9 @@
 import fetch from 'node-fetch'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
-interface GoogleCloudNetblockEndpoint {
+interface GoogleCloudNetblockEndpoint extends jmespath.JSONObject {
     endpoint: string
     service: string
     scope: string
@@ -54,10 +55,12 @@ const netblocksMiner: Miner = async _args => {
 export const registry: MinerRegistry = {
     GoogleCloudNetblocksMiner: {
         miner: cloudNetblocksMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     },
     GoogleNetblocksMiner: {
         miner: netblocksMiner,
+        endpointAttribute: '@',
         defaultFilter: "[]"
     }
 }

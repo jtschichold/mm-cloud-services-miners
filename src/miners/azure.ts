@@ -1,5 +1,6 @@
 import fetch from 'node-fetch'
 import * as cheerio from 'cheerio'
+import * as jmespath from '@metrichor/jmespath'
 
 import {Miner, MinerRegistry} from './models'
 
@@ -10,7 +11,7 @@ const CloudURLs = {
     GermanyCloud: "https://www.microsoft.com/download/confirmation.aspx?id=57064"
 }
 
-interface AzureWithServiceTagsEndpoint {
+interface AzureWithServiceTagsEndpoint extends jmespath.JSONObject {
     cloud: string
     name: string
     id: string
@@ -78,6 +79,7 @@ const azureWithServiceTagsMiner: Miner = async args => {
 export const registry: MinerRegistry = {
     AzureWithServiceTagsMiner: {
         miner: azureWithServiceTagsMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     }
 }
