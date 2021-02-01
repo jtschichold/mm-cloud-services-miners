@@ -246,7 +246,7 @@ function loadIgnore(p) {
             ignoreCache[ignoreFileName] = result;
         }
         catch (error) {
-            core.error(error);
+            core.debug(`Error opening mm-miners-ignore: ${error}`);
             return null;
         }
         return result;
@@ -257,7 +257,6 @@ function applyIgnore(p, epAttribute, entries) {
         if (entries.length === 0)
             return [];
         let ignore = yield loadIgnore(p);
-        core.info(`Ignore ${ignore}`);
         if (!ignore)
             return entries;
         if (typeof entries[0] === 'string') {
