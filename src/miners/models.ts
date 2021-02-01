@@ -7,6 +7,7 @@ export type Miner = (args: MiningConfig['args']) => Promise<JSONArray>
 export interface MinerRegistry {
     [miner: string]: {
         miner: Miner
+        endpointAttribute: string
         defaultFilter: string
     }
 }

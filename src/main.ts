@@ -5,6 +5,7 @@ import * as jmespath from '@metrichor/jmespath'
 
 import * as config from './config'
 import * as miners from './miners'
+import * as ignore from './ignore'
 
 interface ActionInputs {
     script?: string
@@ -94,6 +95,12 @@ async function run(): Promise<void> {
                 let result = await minerDefinition.miner(miningConfig.args)
 
                 for (const o of miningConfig.outputs) {
+                    let survivingResults = await ignore.applyIgnore(
+                        o.resultPath,
+                        minerDefinition.endpointAttribute,
+                        result
+                    )
+
                     writeResult(
                         o.resultPath,
                         jmespath.search(

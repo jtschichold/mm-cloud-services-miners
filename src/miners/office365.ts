@@ -78,6 +78,7 @@ const o365Miner: Miner = async args => {
 export const registry: MinerRegistry = {
     O365Miner: {
         miner: o365Miner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[?endpointType=='IP'].endpoint"
     }
 }

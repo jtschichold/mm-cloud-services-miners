@@ -146,6 +146,147 @@ exports.fromObject = fromObject;
 
 /***/ }),
 
+/***/ 5404:
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __asyncValues = (this && this.__asyncValues) || function (o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.applyIgnore = void 0;
+const path = __importStar(__webpack_require__(5622));
+const readline = __importStar(__webpack_require__(1058));
+const fs = __importStar(__webpack_require__(5747));
+const jmespath = __importStar(__webpack_require__(4161));
+const ignoreCache = {};
+function loadIgnore(p) {
+    var e_1, _a;
+    return __awaiter(this, void 0, void 0, function* () {
+        let ignoreFileName = `${path.dirname(p)}${path.sep}.mm-miners-ignore`;
+        if (ignoreCache[ignoreFileName]) {
+            return ignoreCache[ignoreFileName];
+        }
+        let result = [];
+        let fileStream;
+        try {
+            fileStream = fs.createReadStream(ignoreFileName, 'utf-8');
+        }
+        catch (error) {
+            return null;
+        }
+        const readLine = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        });
+        try {
+            for (var readLine_1 = __asyncValues(readLine), readLine_1_1; readLine_1_1 = yield readLine_1.next(), !readLine_1_1.done;) {
+                const line = readLine_1_1.value;
+                if (line.startsWith('#')) {
+                    continue;
+                }
+                const trimmedLine = line.trim();
+                if (trimmedLine.length === 0) {
+                    continue;
+                }
+                try {
+                    let compiledJMESPath = jmespath.compile(trimmedLine);
+                    result.push({
+                        type: 'jmespath',
+                        value: compiledJMESPath
+                    });
+                }
+                catch (_e) {
+                    let compiledRegExp = new RegExp(trimmedLine);
+                    result.push({
+                        type: 'regex',
+                        value: compiledRegExp
+                    });
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (readLine_1_1 && !readLine_1_1.done && (_a = readLine_1.return)) yield _a.call(readLine_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        ignoreCache[ignoreFileName] = result;
+        return result;
+    });
+}
+function applyIgnore(p, epAttribute, entries) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (entries.length === 0)
+            return [];
+        let ignore = yield loadIgnore(p);
+        if (!ignore)
+            return entries;
+        if (typeof entries[0] === 'string') {
+            return entries.filter(e => {
+                let ignored = ignore.find(i => {
+                    if (i.type === 'regex') {
+                        return i.value.test(e);
+                    }
+                    // jmespath
+                    return jmespath.TreeInterpreter.search(i.value, e) !== false;
+                });
+                return typeof ignored !== 'undefined';
+            });
+        }
+        return entries.filter(e => {
+            let ignored = ignore.find(i => {
+                if (i.type === 'regex') {
+                    if (!e[epAttribute] || typeof e[epAttribute] !== 'string')
+                        return false;
+                    return i.value.test(e[epAttribute]);
+                }
+                // jmespath
+                return jmespath.TreeInterpreter.search(i.value, e) !== false;
+            });
+            return typeof ignored !== 'undefined';
+        });
+    });
+}
+exports.applyIgnore = applyIgnore;
+
+
+/***/ }),
+
 /***/ 3109:
 /***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
@@ -186,6 +327,7 @@ const fs = __importStar(__webpack_require__(5747));
 const jmespath = __importStar(__webpack_require__(4161));
 const config = __importStar(__webpack_require__(88));
 const miners = __importStar(__webpack_require__(4709));
+const ignore = __importStar(__webpack_require__(5404));
 function parseInputs() {
     const result = {};
     const configPath = core.getInput('config');
@@ -245,6 +387,7 @@ function run() {
                         throw new Error(`Unknown miner ${miningConfig.miner}`);
                     let result = yield minerDefinition.miner(miningConfig.args);
                     for (const o of miningConfig.outputs) {
+                        let survivingResults = yield ignore.applyIgnore(o.resultPath, minerDefinition.endpointAttribute, result);
                         writeResult(o.resultPath, jmespath.search(result, o.filter || minerDefinition.defaultFilter));
                     }
                 }
@@ -346,6 +489,7 @@ const adobeCreativeMiner = (_args) => __awaiter(void 0, void 0, void 0, function
 exports.registry = {
     AdobeCreativeMiner: {
         miner: adobeCreativeMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: '[].endpoint'
     }
 };
@@ -401,6 +545,7 @@ const iprangesMiner = (_args) => __awaiter(void 0, void 0, void 0, function* () 
 exports.registry = {
     AWSIPRangesMiner: {
         miner: iprangesMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     }
 };
@@ -496,6 +641,7 @@ const azureWithServiceTagsMiner = (args) => __awaiter(void 0, void 0, void 0, fu
 exports.registry = {
     AzureWithServiceTagsMiner: {
         miner: azureWithServiceTagsMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     }
 };
@@ -564,6 +710,7 @@ const asnPrefixMiner = (args) => __awaiter(void 0, void 0, void 0, function* () 
 exports.registry = {
     BGPViewASNPrefixMiner: {
         miner: asnPrefixMiner,
+        endpointAttribute: 'prefix',
         defaultFilter: '[].prefix'
     }
 };
@@ -626,10 +773,12 @@ const netblocksMiner = (_args) => __awaiter(void 0, void 0, void 0, function* ()
 exports.registry = {
     GoogleCloudNetblocksMiner: {
         miner: cloudNetblocksMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     },
     GoogleNetblocksMiner: {
         miner: netblocksMiner,
+        endpointAttribute: '@',
         defaultFilter: "[]"
     }
 };
@@ -736,6 +885,7 @@ const o365Miner = (args) => __awaiter(void 0, void 0, void 0, function* () {
 exports.registry = {
     O365Miner: {
         miner: o365Miner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[?endpointType=='IP'].endpoint"
     }
 };
@@ -828,6 +978,7 @@ const asRRMiner = (args) => __awaiter(void 0, void 0, void 0, function* () {
 exports.registry = {
     RADBASRegisterdRoutesMiner: {
         miner: asRRMiner,
+        endpointAttribute: 'route',
         defaultFilter: '[].route'
     }
 };
@@ -26944,6 +27095,14 @@ module.exports = require("os");;
 
 "use strict";
 module.exports = require("path");;
+
+/***/ }),
+
+/***/ 1058:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("readline");;
 
 /***/ }),
 

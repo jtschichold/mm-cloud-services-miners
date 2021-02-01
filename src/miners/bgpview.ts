@@ -66,6 +66,7 @@ const asnPrefixMiner: Miner = async args => {
 export const registry: MinerRegistry = {
     BGPViewASNPrefixMiner: {
         miner: asnPrefixMiner,
+        endpointAttribute: 'prefix',
         defaultFilter: '[].prefix'
     }
 }

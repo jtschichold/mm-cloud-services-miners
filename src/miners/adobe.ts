@@ -64,6 +64,7 @@ const adobeCreativeMiner: Miner = async _args => {
 export const registry: MinerRegistry = {
     AdobeCreativeMiner: {
         miner: adobeCreativeMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: '[].endpoint'
     }
 }

@@ -79,6 +79,7 @@ const azureWithServiceTagsMiner: Miner = async args => {
 export const registry: MinerRegistry = {
     AzureWithServiceTagsMiner: {
         miner: azureWithServiceTagsMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     }
 }

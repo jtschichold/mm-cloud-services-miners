@@ -44,6 +44,7 @@ const iprangesMiner: Miner = async _args => {
 export const registry: MinerRegistry = {
     AWSIPRangesMiner: {
         miner: iprangesMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     }
 }

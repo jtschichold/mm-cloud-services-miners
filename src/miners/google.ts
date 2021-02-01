@@ -55,10 +55,12 @@ const netblocksMiner: Miner = async _args => {
 export const registry: MinerRegistry = {
     GoogleCloudNetblocksMiner: {
         miner: cloudNetblocksMiner,
+        endpointAttribute: 'endpoint',
         defaultFilter: "[].endpoint"
     },
     GoogleNetblocksMiner: {
         miner: netblocksMiner,
+        endpointAttribute: '@',
         defaultFilter: "[]"
     }
 }

@@ -70,6 +70,7 @@ const asRRMiner: Miner = async args => {
 export const registry: MinerRegistry = {
     RADBASRegisterdRoutesMiner: {
         miner: asRRMiner,
+        endpointAttribute: 'route',
         defaultFilter: '[].route'
     }
 }
