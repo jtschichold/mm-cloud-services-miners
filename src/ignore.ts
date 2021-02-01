@@ -67,7 +67,7 @@ async function loadIgnore(p: string): Promise<Ignore | null> {
 
         ignoreCache[ignoreFileName] = result
     } catch (error) {
-        core.error(error)
+        core.debug(`Error opening mm-miners-ignore: ${error}`)
         return null
     }
 
@@ -82,7 +82,6 @@ export async function applyIgnore(
     if (entries.length === 0) return []
 
     let ignore = await loadIgnore(p)
-    core.info(`Ignore ${ignore}`)
     if (!ignore) return entries
 
     if (typeof entries[0] === 'string') {
