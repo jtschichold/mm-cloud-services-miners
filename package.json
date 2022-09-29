@@ -26,7 +26,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "@actions/core": "^1.2.6",
+    "@actions/core": "^1.10.0",
     "@metrichor/jmespath": "^0.1.10",
     "@types/cheerio": "^0.22.23",
     "@types/jest": "^26.0.15",
